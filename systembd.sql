@@ -14,7 +14,7 @@
 CREATE DATABASE s_system;
 USE s_system;
 -- -----------------------------------------------------
--- Table system.Empleado
+-- Table Empleado
 -- -----------------------------------------------------
 
 
@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Usuario
+-- Table Usuario
 -- -----------------------------------------------------
 CREATE TABLE Usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,
@@ -43,12 +43,12 @@ CREATE TABLE Usuario (
   Empleado_idEmpleado INT NOT NULL,
   PRIMARY KEY (id_usuario),
     FOREIGN KEY (Empleado_idEmpleado)
-    REFERENCES system.Empleado (idEmpleado))
+    REFERENCES Empleado (idEmpleado))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Cliente
+-- Table Cliente
 -- -----------------------------------------------------
 CREATE TABLE Cliente (
   idCliente INT NOT NULL,
@@ -60,12 +60,12 @@ CREATE TABLE Cliente (
   Empleado_idEmpleado INT NOT NULL,
   PRIMARY KEY (idCliente),
     FOREIGN KEY (Empleado_idEmpleado)
-    REFERENCES system.Empleado (idEmpleado))
+    REFERENCES Empleado (idEmpleado))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Equipo
+-- Table Equipo
 -- -----------------------------------------------------
 CREATE TABLE Equipo (
   idEquipo INT NOT NULL,
@@ -76,12 +76,12 @@ CREATE TABLE Equipo (
   Cliente_idCliente INT NOT NULL,
   PRIMARY KEY (idEquipo),
     FOREIGN KEY (Cliente_idCliente)
-    REFERENCES system.Cliente (idCliente))
+    REFERENCES Cliente (idCliente))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Inventario
+-- Table Inventario
 -- -----------------------------------------------------
 CREATE TABLE Inventario (
   idInventario INT NOT NULL,
@@ -94,7 +94,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Compra
+-- Table Compra
 -- -----------------------------------------------------
 CREATE TABLE Compra (
   idCompra INT NOT NULL AUTO_INCREMENT,
@@ -104,14 +104,14 @@ CREATE TABLE Compra (
   Inventario_idInventario INT NOT NULL,
   PRIMARY KEY (idCompra),
     FOREIGN KEY (Empleado_idEmpleado)
-    REFERENCES system.Empleado (idEmpleado),
+    REFERENCES Empleado (idEmpleado),
     FOREIGN KEY (Inventario_idInventario)
-    REFERENCES system.Inventario (idInventario))
+    REFERENCES Inventario (idInventario))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Rev_equipo
+-- Table Rev_equipo
 -- -----------------------------------------------------
 CREATE TABLE Rev_equipo (
   idRev_equipo INT NOT NULL AUTO_INCREMENT,
@@ -122,12 +122,12 @@ CREATE TABLE Rev_equipo (
   Equipo_idEquipo INT NOT NULL,
   PRIMARY KEY (idRev_equipo),
     FOREIGN KEY (Equipo_idEquipo)
-    REFERENCES system.Equipo (idEquipo))
+    REFERENCES Equipo (idEquipo))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.rev_ma
+-- Table rev_ma
 -- -----------------------------------------------------
 CREATE TABLE rev_ma (
   idrev_ma INT NOT NULL,
@@ -136,14 +136,14 @@ CREATE TABLE rev_ma (
   Rev_equipo_idRev_equipo INT NOT NULL,
   PRIMARY KEY (idrev_ma),
     FOREIGN KEY (Inventario_idInventario)
-    REFERENCES system.Inventario (idInventario),
+    REFERENCES Inventario (idInventario),
     FOREIGN KEY (Rev_equipo_idRev_equipo)
-    REFERENCES system.Rev_equipo (idRev_equipo))
+    REFERENCES Rev_equipo (idRev_equipo))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table system.Factura
+-- Table Factura
 -- -----------------------------------------------------
 CREATE TABLE Factura (
   idFactura INT NOT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE Factura (
   Rev_equipo_idRev_equipo INT NOT NULL,
   PRIMARY KEY (idFactura),
     FOREIGN KEY (Rev_equipo_idRev_equipo)
-    REFERENCES system.Rev_equipo (idRev_equipo))
+    REFERENCES Rev_equipo (idRev_equipo))
 ENGINE = InnoDB;
 
 
