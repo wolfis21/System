@@ -10,185 +10,149 @@
 -- -----------------------------------------------------
 -- Schema system
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `system` DEFAULT CHARACTER SET utf8 ;
-USE `system` ;
+
 
 -- -----------------------------------------------------
--- Table `system`.`Empleado`
+-- Table system.Empleado
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Empleado` (
-  `idEmpleado` INT NOT NULL AUTO_INCREMENT,
-  `Cedula` VARCHAR(45) NOT NULL,
-  `pNombre` VARCHAR(45) NOT NULL,
-  `sNombre` VARCHAR(45) NULL,
-  `pApellido` VARCHAR(45) NOT NULL,
-  `sApellido` VARCHAR(45) NULL,
-  `Fecha_nacimiento` VARCHAR(45) NULL,
-  `Direccion` VARCHAR(45) NULL,
-  `Genero` VARCHAR(45) NULL,
-  `Cargo` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idEmpleado`))
+
+CREATE TABLE Empleado (
+  idEmpleado INT NOT NULL AUTO_INCREMENT,
+  Cedula VARCHAR(45) NOT NULL,
+  pNombre VARCHAR(45) NOT NULL,
+  sNombre VARCHAR(45) NULL,
+  pApellido VARCHAR(45) NOT NULL,
+  sApellido VARCHAR(45) NULL,
+  Fecha_nacimiento VARCHAR(45) NULL,
+  Direccion VARCHAR(45) NULL,
+  Genero VARCHAR(45) NULL,
+  Cargo VARCHAR(45) NOT NULL,
+  PRIMARY KEY (idEmpleado))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Usuario`
+-- Table system.Usuario
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Usuario` (
-  `id_usuario` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NULL,
-  `contraseña` VARCHAR(45) NULL,
-  `Empleado_idEmpleado` INT NOT NULL,
-  INDEX `fk_Usuario_Empleado_idx` (`Empleado_idEmpleado` ASC) VISIBLE,
-  PRIMARY KEY (`id_usuario`),
-  CONSTRAINT `fk_Usuario_Empleado`
-    FOREIGN KEY (`Empleado_idEmpleado`)
-    REFERENCES `system`.`Empleado` (`idEmpleado`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE Usuario (
+  id_usuario INT NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(45) NULL,
+  contraseña VARCHAR(45) NULL,
+  Empleado_idEmpleado INT NOT NULL,
+  PRIMARY KEY (id_usuario),
+    FOREIGN KEY (Empleado_idEmpleado)
+    REFERENCES system.Empleado (idEmpleado))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Cliente`
+-- Table system.Cliente
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Cliente` (
-  `idCliente` INT NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
-  `Apellido` VARCHAR(45) NOT NULL,
-  `Direccion` VARCHAR(45) NULL,
-  `Telefono` VARCHAR(45) NOT NULL,
-  `Correo` VARCHAR(45) NOT NULL,
-  `Empleado_idEmpleado` INT NOT NULL,
-  PRIMARY KEY (`idCliente`),
-  INDEX `fk_Cliente_Empleado1_idx` (`Empleado_idEmpleado` ASC) VISIBLE,
-  CONSTRAINT `fk_Cliente_Empleado1`
-    FOREIGN KEY (`Empleado_idEmpleado`)
-    REFERENCES `system`.`Empleado` (`idEmpleado`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE Cliente (
+  idCliente INT NOT NULL,
+  Nombre VARCHAR(45) NOT NULL,
+  Apellido VARCHAR(45) NOT NULL,
+  Direccion VARCHAR(45) NULL,
+  Telefono VARCHAR(45) NOT NULL,
+  Correo VARCHAR(45) NOT NULL,
+  Empleado_idEmpleado INT NOT NULL,
+  PRIMARY KEY (idCliente),
+    FOREIGN KEY (Empleado_idEmpleado)
+    REFERENCES system.Empleado (idEmpleado))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Equipo`
+-- Table system.Equipo
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Equipo` (
-  `idEquipo` INT NOT NULL,
-  `nombre_e` VARCHAR(45) NOT NULL,
-  `descripcion` VARCHAR(80) NOT NULL,
-  `prev_diag` VARCHAR(80) NOT NULL,
-  `fecha_ingre` DATE NOT NULL,
-  `Cliente_idCliente` INT NOT NULL,
-  PRIMARY KEY (`idEquipo`),
-  INDEX `fk_Equipo_Cliente1_idx` (`Cliente_idCliente` ASC) VISIBLE,
-  CONSTRAINT `fk_Equipo_Cliente1`
-    FOREIGN KEY (`Cliente_idCliente`)
-    REFERENCES `system`.`Cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE Equipo (
+  idEquipo INT NOT NULL,
+  nombre_e VARCHAR(45) NOT NULL,
+  descripcion VARCHAR(80) NOT NULL,
+  prev_diag VARCHAR(80) NOT NULL,
+  fecha_ingre DATE NOT NULL,
+  Cliente_idCliente INT NOT NULL,
+  PRIMARY KEY (idEquipo),
+    FOREIGN KEY (Cliente_idCliente)
+    REFERENCES system.Cliente (idCliente))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Inventario`
+-- Table system.Inventario
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Inventario` (
-  `idInventario` INT NOT NULL,
-  `nombre_m` VARCHAR(45) NOT NULL,
-  `valor_m` DECIMAL(2) NOT NULL,
-  `categoria_m` VARCHAR(45) NOT NULL,
-  `Cant_m` VARCHAR(45) NULL,
-  PRIMARY KEY (`idInventario`))
+CREATE TABLE Inventario (
+  idInventario INT NOT NULL,
+  nombre_m VARCHAR(45) NOT NULL,
+  valor_m DECIMAL(2) NOT NULL,
+  categoria_m VARCHAR(45) NOT NULL,
+  Cant_m VARCHAR(45) NULL,
+  PRIMARY KEY (idInventario))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Compra`
+-- Table system.Compra
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Compra` (
-  `idCompra` INT NOT NULL AUTO_INCREMENT,
-  `Fecha_compra` DATE NULL,
-  `cant_compra` INT NULL,
-  `Empleado_idEmpleado` INT NOT NULL,
-  `Inventario_idInventario` INT NOT NULL,
-  PRIMARY KEY (`idCompra`),
-  INDEX `fk_Compra_Empleado1_idx` (`Empleado_idEmpleado` ASC) VISIBLE,
-  INDEX `fk_Compra_Inventario1_idx` (`Inventario_idInventario` ASC) VISIBLE,
-  CONSTRAINT `fk_Compra_Empleado1`
-    FOREIGN KEY (`Empleado_idEmpleado`)
-    REFERENCES `system`.`Empleado` (`idEmpleado`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Compra_Inventario1`
-    FOREIGN KEY (`Inventario_idInventario`)
-    REFERENCES `system`.`Inventario` (`idInventario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE Compra (
+  idCompra INT NOT NULL AUTO_INCREMENT,
+  Fecha_compra DATE NULL,
+  cant_compra INT NULL,
+  Empleado_idEmpleado INT NOT NULL,
+  Inventario_idInventario INT NOT NULL,
+  PRIMARY KEY (idCompra),
+    FOREIGN KEY (Empleado_idEmpleado)
+    REFERENCES system.Empleado (idEmpleado),
+    FOREIGN KEY (Inventario_idInventario)
+    REFERENCES system.Inventario (idInventario))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Rev_equipo`
+-- Table system.Rev_equipo
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Rev_equipo` (
-  `idRev_equipo` INT NOT NULL AUTO_INCREMENT,
-  `fecha_rev` DATE NOT NULL,
-  `descrip_rev` VARCHAR(80) NOT NULL,
-  `descrip_reemp` VARCHAR(100) NOT NULL,
-  `presupuesto` FLOAT NOT NULL,
-  `Equipo_idEquipo` INT NOT NULL,
-  PRIMARY KEY (`idRev_equipo`),
-  INDEX `fk_Rev_equipo_Equipo1_idx` (`Equipo_idEquipo` ASC) VISIBLE,
-  CONSTRAINT `fk_Rev_equipo_Equipo1`
-    FOREIGN KEY (`Equipo_idEquipo`)
-    REFERENCES `system`.`Equipo` (`idEquipo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE Rev_equipo (
+  idRev_equipo INT NOT NULL AUTO_INCREMENT,
+  fecha_rev DATE NOT NULL,
+  descrip_rev VARCHAR(80) NOT NULL,
+  descrip_reemp VARCHAR(100) NOT NULL,
+  presupuesto FLOAT NOT NULL,
+  Equipo_idEquipo INT NOT NULL,
+  PRIMARY KEY (idRev_equipo),
+    FOREIGN KEY (Equipo_idEquipo)
+    REFERENCES system.Equipo (idEquipo))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`rev_ma`
+-- Table system.rev_ma
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`rev_ma` (
-  `idrev_ma` INT NOT NULL,
-  `cant_usar` VARCHAR(45) NOT NULL,
-  `Inventario_idInventario` INT NOT NULL,
-  `Rev_equipo_idRev_equipo` INT NOT NULL,
-  PRIMARY KEY (`idrev_ma`),
-  INDEX `fk_rev_ma_Inventario1_idx` (`Inventario_idInventario` ASC) VISIBLE,
-  INDEX `fk_rev_ma_Rev_equipo1_idx` (`Rev_equipo_idRev_equipo` ASC) VISIBLE,
-  CONSTRAINT `fk_rev_ma_Inventario1`
-    FOREIGN KEY (`Inventario_idInventario`)
-    REFERENCES `system`.`Inventario` (`idInventario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_rev_ma_Rev_equipo1`
-    FOREIGN KEY (`Rev_equipo_idRev_equipo`)
-    REFERENCES `system`.`Rev_equipo` (`idRev_equipo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE rev_ma (
+  idrev_ma INT NOT NULL,
+  cant_usar VARCHAR(45) NOT NULL,
+  Inventario_idInventario INT NOT NULL,
+  Rev_equipo_idRev_equipo INT NOT NULL,
+  PRIMARY KEY (idrev_ma),
+    FOREIGN KEY (Inventario_idInventario)
+    REFERENCES system.Inventario (idInventario),
+    FOREIGN KEY (Rev_equipo_idRev_equipo)
+    REFERENCES system.Rev_equipo (idRev_equipo))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `system`.`Factura`
+-- Table system.Factura
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `system`.`Factura` (
-  `idFactura` INT NOT NULL,
-  `fecha_e` DATE NOT NULL,
-  `impuesto_m` FLOAT NULL,
-  `impuesto_o` FLOAT NULL,
-  `total` DECIMAL(2) NULL,
-  `Rev_equipo_idRev_equipo` INT NOT NULL,
-  PRIMARY KEY (`idFactura`),
-  INDEX `fk_Factura_Rev_equipo1_idx` (`Rev_equipo_idRev_equipo` ASC) VISIBLE,
-  CONSTRAINT `fk_Factura_Rev_equipo1`
-    FOREIGN KEY (`Rev_equipo_idRev_equipo`)
-    REFERENCES `system`.`Rev_equipo` (`idRev_equipo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE Factura (
+  idFactura INT NOT NULL,
+  fecha_e DATE NOT NULL,
+  impuesto_m FLOAT NULL,
+  impuesto_o FLOAT NULL,
+  total DECIMAL(2) NULL,
+  Rev_equipo_idRev_equipo INT NOT NULL,
+  PRIMARY KEY (idFactura),
+    FOREIGN KEY (Rev_equipo_idRev_equipo)
+    REFERENCES system.Rev_equipo (idRev_equipo))
 ENGINE = InnoDB;
 
 
