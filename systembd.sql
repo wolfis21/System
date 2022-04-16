@@ -11,10 +11,12 @@
 -- Schema system
 -- -----------------------------------------------------
 
-
+CREATE DATABASE s_system;
+USE s_system;
 -- -----------------------------------------------------
 -- Table system.Empleado
 -- -----------------------------------------------------
+
 
 CREATE TABLE Empleado (
   idEmpleado INT NOT NULL AUTO_INCREMENT,
