@@ -1,15 +1,27 @@
-<?php ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <?php
-    require('Controller/C_verUsuario.php');
-    ?>
-</body>
-</html>
+<?php
+require_once 'model/database.php';
+
+$controller = 'empleado';
+
+// Todo esta lógica hara el papel de un FrontController
+if(!isset($_REQUEST['c']))
+{
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+    $controller->Index();    
+}
+else
+{
+    // Obtenemos el controlador que queremos cargar
+    $controller = strtolower($_REQUEST['c']);
+    $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
+    
+    // Instanciamos el controlador
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+    
+    // Llama la accion
+    call_user_func( array( $controller, $accion ) );
+}
