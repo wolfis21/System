@@ -37,6 +37,21 @@ class Usuario{
 		{
 			die($e->getMessage());
 		}
+	} //falta desarrollar
+	public function verificar($nombre, $contrasena){
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * FROM usuario WHERE nombre= ? AND ");
+			          
+
+			$stm->execute(array($nombre,$contrasena));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+
 	}
 	public function Obtener($id_usuario)
 	{
@@ -68,6 +83,24 @@ class Usuario{
 		}
 	}
 
+	public function Actualizar($data2)
+	{
+		try 
+		{			
+			 $sql22="UPDATE usuario SET nombre	=?, contraseña 	=? WHERE 1";
+
+			 $this->pdo->prepare($sql22)
+			 		->execute(
+						 array(
+				 		$data2->nombre,
+				 		$data2->contraseña
+					 )
+				);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 	public function Registrar(Usuario $data)
 	{
 		try 

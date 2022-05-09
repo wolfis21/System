@@ -107,6 +107,16 @@ class Empleado
                         $data->idEmpleado
 					)
 				);
+
+			//  $sql22="UPDATE usuario SET nombre	=?, contraseña 	=? WHERE 0";
+
+			//  $this->pdo->prepare($sql22)
+			//  		->execute(
+			// 			 array(
+			// 	 		$data2->nombre,
+			// 	 		$data2->contraseña,
+			// 		 )
+			// 	);
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());

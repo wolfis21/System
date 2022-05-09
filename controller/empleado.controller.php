@@ -4,9 +4,11 @@ require_once 'model/usuario_m.php';
 class EmpleadoController{
     
     private $model;
+    private $model2;
     
     public function __CONSTRUCT(){
         $this->model = new Empleado();
+        $this->model2 = new Usuario();
     }
     
     public function Index(){
@@ -54,7 +56,7 @@ class EmpleadoController{
       //  $user->Empleado_idEmpleado = $_REQUEST['id'];
 
         $emple->idEmpleado > 0 
-            ? $this->model->Actualizar($emple)
+            ? $this->model->Actualizar($emple) && $this->model2->Actualizar($user)
             : $this->model->Registrar($emple,$user);
         
         header('Location: index.php');
@@ -62,6 +64,7 @@ class EmpleadoController{
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id']);
+        $this->model2->Eliminar($_REQUEST['id']);
         header('Location: index.php');
     }
 }
