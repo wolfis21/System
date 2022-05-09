@@ -48,8 +48,7 @@ class Empleado
 	{
 		try 
 		{
-			$stm = $this->pdo
-			          ->prepare("SELECT * FROM empleado WHERE idEmpleado = ?");
+			$stm = $this->pdo->prepare("SELECT * FROM empleado WHERE idEmpleado = ?");
 			          
 
 			$stm->execute(array($idEmpleado));
@@ -87,7 +86,7 @@ class Empleado
                         Fecha_nacimiento = ?,
 						Direccion        = ?,
 						Genero            = ?, 
-						telefono            = ?,
+						telefono           	= ?,
 						Cargo            = ?
 				    WHERE idEmpleado = ?";
 
@@ -123,9 +122,9 @@ class Empleado
 		$sql2 = "INSERT INTO usuario (nombre, contraseña) 
 				 VALUES (?, ?)";
 
-		// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
+					// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
 
-// falta de registro de la clave foranea en la tabla de users
+					// falta de registro de la clave foranea en la tabla de users
 
 		$this->pdo->prepare($sql)
 		     ->execute(
