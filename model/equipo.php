@@ -93,7 +93,7 @@ class Equipo{
 		}
 	}
 
-    public function Registrar(Equipo $data, Cliente $client, Empleado $empleado )
+    public function Registrar(Equipo $data, Cliente $client)
 	{
 		try 
 		{
@@ -136,6 +136,5 @@ class Equipo{
 			die($e->getMessage());
 		}
 	}
-
 
 }
