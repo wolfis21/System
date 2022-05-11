@@ -36,3 +36,6 @@
     <?php endforeach; ?>
     </tbody>
 </table> 
+<div align="center">
+    <a class="btn btn-primary" href="index.php">Ir a Home</a>
+    </div>
