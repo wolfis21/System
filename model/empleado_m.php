@@ -73,7 +73,7 @@ class Empleado
 		}
 	}
 
-	public function Actualizar($data)
+	public function Actualizar(Empleado $data, Usuario $user)
 	{
 		try 
 		{
@@ -107,15 +107,16 @@ class Empleado
 					)
 				);
 
-			//  $sql22="UPDATE usuario SET nombre	=?, contraseña 	=? WHERE 0";
+			 $sql22="UPDATE usuario SET nombre	=?, contraseña 	=? WHERE id_usuario =?";
 
-			//  $this->pdo->prepare($sql22)
-			//  		->execute(
-			// 			 array(
-			// 	 		$data2->nombre,
-			// 	 		$data2->contraseña,
-			// 		 )
-			// 	);
+			 $this->pdo->prepare($sql22)
+			 		->execute(
+						 array(
+				 		$user->nombre,
+				 		$user->contraseña,
+						$user->id_usuario
+					 )
+				);
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
