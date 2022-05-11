@@ -1,15 +1,14 @@
 <?php
 require_once 'model/equipo.php';
-require_once 'model/cliente.php';
+
 
 class EquipoController{
     
     private $model;
-    private $model2;
+    
     
     public function __CONSTRUCT(){
         $this->model = new Equipo();
-        $this->model2 = new Cliente();
     }
     
     public function Index(){
@@ -55,7 +54,6 @@ class EquipoController{
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id']);
-        $this->model2->Eliminar($_REQUEST['id']);
         header('Location: index.php');
     }
 }

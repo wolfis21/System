@@ -93,15 +93,13 @@ class Equipo{
 		}
 	}
 
-    public function Registrar(Equipo $data, Cliente $client)
+    public function Registrar(Equipo $data)
 	{
 		try 
 		{
-		$sql = "INSERT INTO equipo (nombre_e, descripcion, prev_diag, fecha_ingre, Cliente_idCliente) 
-		        VALUES (?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO equipo (idEquipo,nombre_e, descripcion, prev_diag, fecha_ingre, Cliente_idCliente) 
+		        VALUES (?, ?, ?, ?, ?, ?)";
 
-		$sql2 = "INSERT INTO cliente (Nombre, Apellido, Direccion, Telefono, Correo,Empleado_idEmpleado) 
-				 VALUES (?, ?, ?, ?, ?, ?)";
 
 					// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
 
@@ -118,18 +116,7 @@ class Equipo{
                 )
 			);
 			
-		$this->pdo->prepare($sql2)
-			->execute(
-			   array(
-				$client->Nombre,
-				$client->Apellido,
-                $client->Direccion,
-                $client->Telefono,
-                $client->Correo,
-				// $user->Empleado_idEmpleado 
-			   )
-		   );
-		// $this->pdo->prepare($sql3)->execute();
+				// $this->pdo->prepare($sql3)->execute();
 
 		} catch (Exception $e) 
 		{
