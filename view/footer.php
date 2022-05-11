@@ -2,7 +2,7 @@
                 <div class="col-xs-12">
                     <hr />
                     <footer class="text-center well">
-                        <p>desarrollado por Isaac Saado</a></p>
+                        <p>Desarrollado por Isaac Saado</a></p>
                     </footer>                
                 </div>    
             </div>
