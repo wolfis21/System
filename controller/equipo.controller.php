@@ -1,7 +1,6 @@
 <?php
 require_once 'model/equipo.php';
 
-
 class EquipoController{
     
     private $model;
@@ -20,8 +19,8 @@ class EquipoController{
     public function Crud(){
         $emple = new Equipo();
         
-        if(isset($_REQUEST['id'])){
-            $emple = $this->model->Obtener($_REQUEST['id']);
+        if(isset($_REQUEST['idEquipo'])){
+            $emple = $this->model->Obtener($_REQUEST['idEquipo']);
         }
         
         require_once 'view/header.php';
@@ -36,7 +35,7 @@ class EquipoController{
     public function Guardar(){
         $equi = new Equipo();
         
-        $equi->idEquipo = $_REQUEST['id'];
+        $equi->idEquipo = $_REQUEST['idEquipo'];
         $equi->nombre_e = $_REQUEST['nombre_e'];
         $equi->descripcion = $_REQUEST['descripcion'];
         $equi->prev_diag = $_REQUEST['prev_diag'];
@@ -53,7 +52,7 @@ class EquipoController{
     }
     
     public function Eliminar(){
-        $this->model->Eliminar($_REQUEST['id']);
+        $this->model->Eliminar($_REQUEST['idEquipo']);
         header('Location: index.php');
     }
 }

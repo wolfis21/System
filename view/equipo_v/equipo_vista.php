@@ -27,10 +27,10 @@
             <td><?php echo $r->fecha_ingre; ?></td>
             <td><?php echo $r->Cliente_idCliente; ?></td>
             <td>
-                <a href="?c=Equipo&a=Crud&id=<?php echo $r->idEquipo; ?>">Editar</a>
+                <a href="?c=Equipo&a=Crud&idEquipo=<?php echo $r->idEquipo; ?>">Editar</a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Equipo&a=Eliminar&id=<?php echo $r->idEquipo; ?>">Eliminar</a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Equipo&a=Eliminar&idEquipo=<?php echo $r->idEquipo; ?>">Eliminar</a>
             </td>
         </tr>
     <?php endforeach; ?>
