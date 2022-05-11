@@ -47,7 +47,7 @@ class Cliente
 			          ->prepare("SELECT * FROM cliente WHERE idCliente = ?");
 			          
 
-			$stm->execute(array($idEmpleado));
+			$stm->execute(array($idCliente));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
 		{
@@ -55,14 +55,14 @@ class Cliente
 		}
 	}
 
-	public function Eliminar($idEmpleado)
+	public function Eliminar($idCliente)
 	{
 		try 
 		{
 			$stm = $this->pdo
 			            ->prepare("DELETE FROM cliente WHERE idCliente = ?");			          
 
-			$stm->execute(array($idEmpleado));
+			$stm->execute(array($idCliente));
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
