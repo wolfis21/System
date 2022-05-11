@@ -1,10 +1,10 @@
 <h1 class="page-header">
-    <?php echo $emple->idCliente != null ? $emple->Nombre : 'Nuevo Cliente'; ?>
+    <?php echo $emple->idCliente != null ? $emple->Nombre : 'Actualizar Cliente'; ?>
 </h1>
 
 <ol class="breadcrumb">
   <li><a href="?c=Cliente">Cliente</a></li>
-  <li class="active"><?php echo $emple->idCliente != null ? $emple->Nombre : 'Nuevo Registro'; ?></li>
+  <li class="active"><?php echo $emple->idCliente != null ? $emple->Nombre : 'Actualizar Registro'; ?></li>
 </ol>
 
 <form id="frm-alumno" action="?c=Cliente&a=Guardar" method="post" enctype="multipart/form-data">

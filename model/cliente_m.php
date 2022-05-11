@@ -3,7 +3,8 @@ class Cliente
 {
 	private $pdo;
     
-    public $Nombre;
+    public $idCliente;
+	public $Nombre;
 	public $Apellido;
     public $Direccion;
 	public $Telefono;
@@ -43,10 +44,9 @@ class Cliente
 	{
 		try 
 		{
-			$stm = $this->pdo
-			          ->prepare("SELECT * FROM cliente WHERE idCliente = ?");
+			$stm = $this->pdo->prepare("SELECT * FROM cliente WHERE idCliente = ?");
 			          
-
+			          
 			$stm->execute(array($idCliente));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
@@ -79,7 +79,7 @@ class Cliente
 						Direccion           = ?,
 						Telefono            = ?,
 						Correos             = ?,
-                        Empleado_idEmpleado = ?,
+                        Empleado_idEmpleado = ?
 						
 				    WHERE idCliente = ?";
 
@@ -106,13 +106,13 @@ class Cliente
 	{
 		try 
 		{
-		$sql = "INSERT INTO cliente (diCliente, Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
-		        VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO cliente (Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
+		        VALUES (?, ?, ?, ?, ?, ?)";
+
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
-					$data->idCliente,
 					$data->Nombre,
                     $data->Apellido,
 					$data->Direccion, 
