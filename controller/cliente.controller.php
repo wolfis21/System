@@ -34,12 +34,12 @@ require_once 'view/cliente/cliente2.php';
         $emple= new Cliente();
 
     $emple->idCliente = $_REQUEST['idCliente'];
-    $emple->$Nombre = $_REQUEST['Nombre'];
-    $emple->$Apellido= $_REQUEST['Apellido'];
-    $emple->$Direccion= $_REQUEST['Direccion'];
-    $emple->$Telefono= $_REQUEST['Telefono'];
-    $emple->$Correo= $_REQUEST['Correo'];
-    $emple->$Empleado_idEmpleado= $_REQUEST['Empleado_idEmpleado'];
+    $emple->Nombre = $_REQUEST['Nombre'];
+    $emple->Apellido= $_REQUEST['Apellido'];
+    $emple->Direccion= $_REQUEST['Direccion'];
+    $emple->Telefono= $_REQUEST['Telefono'];
+    $emple->Correo= $_REQUEST['Correo'];
+    $emple->Empleado_idEmpleado= $_REQUEST['Empleado_idEmpleado'];
 
         $emple->idCliente > 0 
             ? $this->model->Actualizar($emple)

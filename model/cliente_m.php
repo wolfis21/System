@@ -106,17 +106,13 @@ class Cliente
 	{
 		try 
 		{
-		$sql = "INSERT INTO cliente (Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
-		        VALUES (?, ?, ?, ?, ?, ?)";
-
-
-		// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
-
-// falta de registro de la clave foranea en la tabla de users
+		$sql = "INSERT INTO cliente (diCliente, Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
+		        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
+					$data->idCliente,
 					$data->Nombre,
                     $data->Apellido,
 					$data->Direccion, 
