@@ -1,7 +1,6 @@
 <h1 class="page-header">Registro de Equipos</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Equipo&a=Mostrar">Ver mas detalles</a>
     <a class="btn btn-primary" href="?c=Equipo&a=Crud">Nuevo Equipo</a>
 </div>
 
