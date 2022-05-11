@@ -113,7 +113,7 @@ class Equipo{
                     $data->descripcion,
                     $data->prev_diag, 
                     $data->fecha_ingre,
-                    $data->Cliente_idCliente,
+                    $data->Cliente_idCliente
                 )
 			);
 			
