@@ -1,7 +1,7 @@
 <h1 class="page-header">Cliente</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Empleado&a=Index">Retroceder</a>
+    <a class="btn btn-primary" href="?c=cliente&a=Index">Retroceder</a>
 </div>
 
 <table class="table table-striped">
