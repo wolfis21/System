@@ -50,13 +50,13 @@ class EmpleadoController{
         
         $user = new Usuario();
         
-        // $user->id_usuario = $_REQUEST['id'];
+        $user->id_usuario = $_REQUEST['id'];
         $user->nombre = $_REQUEST['pNombre'];
         $user->contraseña = $_REQUEST['Cedula'];
       //  $user->Empleado_idEmpleado = $_REQUEST['id'];
 
         $emple->idEmpleado > 0 
-            ? $this->model->Actualizar($emple) && $this->model2->Actualizar($user)
+            ? $this->model->Actualizar($emple,$user)
             : $this->model->Registrar($emple,$user);
         
         header('Location: index.php');
