@@ -1,3 +1,9 @@
+<div class="well well-sm text-left">
+        <a class="btn btn-primary" href="home_empleado.php">Seccion Empleados</a>
+        <a class="btn btn-primary" href="home_cliente.php">Seccion Clientes</a>
+        <a class="btn btn-primary" href="home_equipo.php">Seccion Equipos</a>
+    </div>
+
 <h1 class="page-header">Registro de Cliente</h1>
 
 <div class="well well-sm text-right">
@@ -30,7 +36,7 @@
             <td><?php echo $r->Correo; ?></td>
             <td><?php echo $r->Empleado_idEmpleado; ?></td>
             <td>
-                <a href="?c=Clienteo&a=Crud&id=<?php echo $r->idCliente; ?>">Editar</a>
+                <a href="?c=Cliente&a=Crud&id=<?php echo $r->idCliente; ?>">Editar</a>
             </td>
             <td>
                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Cliente&a=Eliminar&id=<?php echo $r->idCliente; ?>">Eliminar</a>
