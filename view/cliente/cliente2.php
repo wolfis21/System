@@ -14,7 +14,7 @@
             <th>Telefono</th>
             <th>Correo</th>
             <th>ID_empleado</th>
-            <th>Direccion</th>
+            <th>Empleado</th>
             <th style="width:60px;"></th>
             <th style="width:60px;"></th>
         </tr>
