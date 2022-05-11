@@ -1,5 +1,5 @@
 <h1 class="page-header">
-    <?php echo $emple->idCliente != null ? $emple->Nombre : 'Actualizar Cliente'; ?>
+    <?php echo $emple->idCliente != null ? $emple->Nombre : 'Registrar Cliente'; ?>
 </h1>
 
 <ol class="breadcrumb">
