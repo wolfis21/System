@@ -8,6 +8,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Id Equipo</th>
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Diagnostico</th>
@@ -19,6 +20,7 @@
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
+            <td><?php echo $r->idEquipo?></td>
             <td><?php echo $r->nombre_e; ?></td>
             <td><?php echo $r->descripcion; ?></td>
             <td><?php echo $r->prev_diag; ?></td>

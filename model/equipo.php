@@ -108,6 +108,7 @@ class Equipo{
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
+					$data->idEquipo,
                     $data->nombre_e,
                     $data->descripcion,
                     $data->prev_diag, 
