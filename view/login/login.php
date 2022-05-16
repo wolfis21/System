@@ -116,13 +116,13 @@ img
 {
 	margin-top:5%;
 	color:black;
-}
+}    
 </style>
 <body>
   <div class="cajafuera" align="center">
  
 <div class="formulariocaja">
-<form method="post" action="    Entrar.php    " name="vaidrollteam">
+<form method="post" action="?c=Usuario&a=Entrar" name="vaidrollteam">
 <div class="formtitulo">Login</div>
 <div align="left" class="textoscajas">&#128273; Ingresar usuario</div>
 <input type="text" name="nombre" class="cajaentradatexto">

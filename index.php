@@ -5,7 +5,7 @@
         <a class="btn btn-primary" href="home_empleado.php">Seccion Empleados</a>
         <a class="btn btn-primary" href="home_cliente.php">Seccion Clientes</a>
         <a class="btn btn-primary" href="home_equipo.php">Seccion Equipos</a>
-        <a href="view/login/login.php">Iniciar Sesion</a>
+        <a href="home_login.php">Iniciar Sesion</a>
     </div>
     <div class="well well-sm text-center">
     <img src="https://us.123rf.com/450wm/pixelalex/pixelalex1602/pixelalex160200046/52881293-icono-servicio-de-inform%C3%A1tica-soporte-t%C3%A9cnico-servicio-de-reparaci%C3%B3n-de-equipo.jpg"/>

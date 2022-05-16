@@ -39,19 +39,16 @@ class Usuario{
 		}
 	} //falta desarrollar
 	public function verificar($nombre, $contrasena){
-		try 
-		{
-			$stm = $this->pdo
-			          ->prepare("SELECT * FROM usuario WHERE nombre= ? AND ");
-			          
-
-			$stm->execute(array($nombre,$contrasena));
-			return $stm->fetch(PDO::FETCH_OBJ);
-		} catch (Exception $e) 
-		{
-			die($e->getMessage());
+		
+		
+		$sql="SELECT * FROM usuario WHERE nombre='$nombre' AND contraseña='$contrasena'";
+		$query = $this->pdo->query($sql);
+		
+		if($query){
+			return $query->fetchAll(PDO::FETCH_ASSOC);
+		}else{	
+		 return false;
 		}
-
 	}
 	public function Obtener($id_usuario)
 	{
