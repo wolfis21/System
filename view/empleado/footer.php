@@ -1,8 +1,8 @@
-            <div class="row">
+<div class="row">
                 <div class="col-xs-12">
                     <hr />
                     <footer class="text-center well">
-                        <p>Sistema de Gestion de Servicio Tecnico</a></p>
+                        <p>Desarrollado por Isaac Saado</a></p>
                     </footer>                
                 </div>    
             </div>

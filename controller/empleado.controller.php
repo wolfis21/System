@@ -14,7 +14,7 @@ class EmpleadoController{
     public function Index(){
         require_once 'view/header.php';
         require_once 'view/empleado/empleado.php';
-        require_once 'view/footer.php';
+        require_once 'view/empleado/footer.php';
     }
     
     public function Crud(){
@@ -26,7 +26,7 @@ class EmpleadoController{
         
         require_once 'view/header.php';
         require_once 'view/empleado/empleado-editar.php';
-        require_once 'view/footer.php';
+        require_once 'view/empleado/footer.php';
     }
    public function Mostrar(){
     require_once 'view/header.php';
