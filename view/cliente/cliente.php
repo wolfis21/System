@@ -1,8 +1,8 @@
-<div class="well well-sm text-left">
+<!-- <div class="well well-sm text-left">
         <a class="btn btn-primary" href="home_empleado.php">Seccion Empleados</a>
         <a class="btn btn-primary" href="home_cliente.php">Seccion Clientes</a>
         <a class="btn btn-primary" href="home_equipo.php">Seccion Equipos</a>
-    </div>
+    </div> -->
 
 <h1 class="page-header">Registro de Cliente</h1>
 
