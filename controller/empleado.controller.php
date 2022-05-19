@@ -59,12 +59,12 @@ class EmpleadoController{
             ? $this->model->Actualizar($emple,$user)
             : $this->model->Registrar($emple,$user);
         
-        header('Location: index.php');
+        header('Location: index.php?c=Empleado&a=Index');
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id']);
         $this->model2->Eliminar($_REQUEST['id']);
-        header('Location: index.php');
+        header('Location: index.php?c=Empleado&a=Index');
     }
 }

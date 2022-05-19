@@ -67,6 +67,7 @@ class Empleado
 			            ->prepare("DELETE FROM empleado WHERE idEmpleado = ?");			          
 
 			$stm->execute(array($idEmpleado));
+
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
@@ -130,8 +131,8 @@ class Empleado
 		$sql = "INSERT INTO empleado (Cedula, pNombre, sNombre, pApellido, sApellido, Fecha_nacimiento, Direccion, Genero, telefono, Cargo) 
 		        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-		$sql2 = "INSERT INTO usuario (nombre, contraseña) 
-				 VALUES (?, ?)";
+		$sql2 = "INSERT INTO usuario (nombre, contraseña, Empleado_idEmpleado) 
+				 VALUES (?, ?,?)";
 
 					// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
 
@@ -153,11 +154,14 @@ class Empleado
                 )
 			);
 			
+			$id_emple = $this->pdo->lastInsertId();
+
 		$this->pdo->prepare($sql2)
 			->execute(
 			   array(
 				$user->nombre,
-				$user->contraseña
+				$user->contraseña,
+				$id_emple
 				// $user->Empleado_idEmpleado 
 			   )
 		   );
