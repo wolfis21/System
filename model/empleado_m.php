@@ -134,10 +134,6 @@ class Empleado
 		$sql2 = "INSERT INTO usuario (nombre, contraseña, Empleado_idEmpleado) 
 				 VALUES (?, ?,?)";
 
-					// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
-
-					// falta de registro de la clave foranea en la tabla de users
-
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
@@ -153,7 +149,7 @@ class Empleado
 					$data->Cargo
                 )
 			);
-			
+			//metodo para obtener el id autoincrementable 
 			$id_emple = $this->pdo->lastInsertId();
 
 		$this->pdo->prepare($sql2)
@@ -162,10 +158,8 @@ class Empleado
 				$user->nombre,
 				$user->contraseña,
 				$id_emple
-				// $user->Empleado_idEmpleado 
 			   )
 		   );
-		// $this->pdo->prepare($sql3)->execute();
 
 		} catch (Exception $e) 
 		{
