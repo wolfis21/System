@@ -19,7 +19,7 @@ class UsuarioController{
         $user->contrasena = $_REQUEST['Cedula'];
         $user->Empleado_idEmpleado = $_REQUEST['id'];
 
-        header('Location: index.php');
+        header('Location: home.php');
     }
     public function Entrar(){
         $user = new Usuario();
@@ -32,7 +32,7 @@ class UsuarioController{
         $resp=$user->verificar($user->nombre, $user->contrasena);
 
         if($resp == true){
-            header('location: index.php');
+            header('location: home.php');
         } else{
         ?>
 		<h1> ERROR!!</h1>
