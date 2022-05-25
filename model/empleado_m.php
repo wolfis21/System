@@ -43,7 +43,19 @@ class Empleado
 			die($e->getMessage());
 		}
 	}
-
+	public function ListarEm()
+	{
+		try
+		{
+			$this->consulta = $this->pdo->prepare('SELECT * FROM empleado');
+            $this->consulta->execute();
+            return $this->consulta;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 	public function Obtener($idEmpleado)
 	{
 		try 

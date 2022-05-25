@@ -1,3 +1,4 @@
+
 <h1 class="page-header">
     <?php echo $emple->idCliente != null ? $emple->Nombre : 'Registrar Cliente'; ?>
 </h1>
@@ -9,6 +10,11 @@
 
 <form id="frm-alumno" action="?c=Cliente&a=Guardar" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $emple->idCliente; ?>" />
+
+    <div class="form-group">
+        <label>Cedula</label>
+        <input type="number" name="idCedula" value="<?php echo $emple->idCedula; ?>" class="form-control" placeholder="Ingrese su Cedula" data-validacion-tipo="requerido" />
+    </div>
 
     <div class="form-group">
         <label>Nombre</label>
@@ -35,13 +41,12 @@
         <input type="text" name="Correo" value="<?php echo $emple->Correo; ?>" class="form-control" placeholder="Ingrese su correo" data-validacion-tipo="requerido" />
     </div>
      
-    <div class="form-group">
-        <label>Id_Empleado</label>
-        <input type="number" name="Empleado_idEmpleado" value="<?php echo $emple->Telefono; ?>" class="form-control" placeholder="id_empleado" data-validacion-tipo="requerido" />
-    </div>
-
-    <hr />
-    
+    <th>ID_Empleado: &nbsp&nbsp </th>
+    <select name="idEmpleado" >
+            <?php foreach ($listare as $p): ?>
+                <option value="<?php echo $p['idEmpleado']?>"><?php echo $p['pNombre']?></option>
+            <?php endforeach; ?>
+    </select>
     <div class="text-right">
         <button class="btn btn-success">Guardar</button>
     </div>

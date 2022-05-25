@@ -74,6 +74,7 @@ class Cliente
 		try 
 		{
 			$sql = "UPDATE cliente SET 
+						idCedula			= ?,
 						Nombre              = ?,
 						Apellido            = ?, 
 						Direccion           = ?,
@@ -86,6 +87,7 @@ class Cliente
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
+						$data->idCedula,
 						$data->Nombre,
                         $data->Apellido,
 						$data->Direccion, 
@@ -106,13 +108,14 @@ class Cliente
 	{
 		try 
 		{
-		$sql = "INSERT INTO cliente (Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
-		        VALUES (?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO cliente (idCedula,Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
+		        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
+					$data->idCliente,
 					$data->Nombre,
                     $data->Apellido,
 					$data->Direccion, 

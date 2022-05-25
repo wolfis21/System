@@ -55,7 +55,8 @@ ENGINE = InnoDB;
 -- Table Cliente
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Cliente (
-  idCliente INT NOT NULL,
+  idCliente INT NOT NULL AUTO_INCREMENT,
+  idCedula VARCHAR(45) NOT NULL,
   Nombre VARCHAR(45) NOT NULL,
   Apellido VARCHAR(45) NOT NULL,
   Direccion VARCHAR(45) NULL,
@@ -72,7 +73,8 @@ ENGINE = InnoDB;
 -- Table Equipo
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Equipo (
-  idEquipo INT NOT NULL,
+  idEquipo INT NOT NULL AUTO_INCREMENT,
+  idCodigo VARCHAR(45) NOT NULL,
   nombre_e VARCHAR(45) NOT NULL,
   descripcion VARCHAR(80) NOT NULL,
   prev_diag VARCHAR(80) NOT NULL,
@@ -104,7 +106,7 @@ ENGINE = InnoDB;
 -- Table Carta
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Carta (
-  idCarta INT NOT NULL,
+  idCarta INT NOT NULL AUTO_INCREMENT,
   fecha_e DATE NOT NULL,
   impuesto_m FLOAT NOT NULL,
   impuesto_o FLOAT NOT NULL,
@@ -120,7 +122,7 @@ ENGINE = InnoDB;
 -- Table Proveedores
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Proveedores (
-  idProveedores INT NOT NULL,
+  idProveedores INT NOT NULL AUTO_INCREMENT,
   nombre_empre VARCHAR(45) NOT NULL,
   categoria VARCHAR(45) NOT NULL,
   direccion VARCHAR(45) NOT NULL,
