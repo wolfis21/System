@@ -9,7 +9,7 @@
 </ol>
 
 <form id="frm-alumno" action="?c=Cliente&a=Guardar" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $emple->idCliente; ?>" />
+    <input type="hidden" name="idCliente" value="<?php echo $emple->idCliente; ?>" />
 
     <div class="form-group">
         <label>Cedula</label>

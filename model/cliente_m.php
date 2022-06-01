@@ -115,7 +115,7 @@ class Cliente
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
-					$data->idCliente,
+					$data->idCedula,
 					$data->Nombre,
                     $data->Apellido,
 					$data->Direccion, 

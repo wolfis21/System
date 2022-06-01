@@ -42,6 +42,7 @@ require_once 'view/cliente/cliente2.php';
     public function Guardar(){
         $emple= new Cliente();
 
+    $emple->idCliente = $_REQUEST['idCliente'];
     $emple->idCedula = $_REQUEST['idCedula'];
     $emple->Nombre = $_REQUEST['Nombre'];
     $emple->Apellido= $_REQUEST['Apellido'];
@@ -54,12 +55,16 @@ require_once 'view/cliente/cliente2.php';
             ? $this->model->Actualizar($emple)
             : $this->model->Registrar($emple);
         
-        header('Location: home.php');
+    require_once 'view/cliente/header.php';
+    require_once 'view/cliente/cliente.php';
+    require_once 'view/cliente/footer.php';
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id']);
-        header('Location: home.php');
+        require_once 'view/cliente/header.php';
+        require_once 'view/cliente/cliente.php';
+        require_once 'view/cliente/footer.php';
     }
 }
 ?>
