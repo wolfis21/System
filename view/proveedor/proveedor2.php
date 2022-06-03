@@ -9,14 +9,16 @@
             <th>Telefono de contacto</th>
         </tr>
     </thead>
-</table>
+
 <tbody>
 <?php foreach($this->model->Listar() as $p): ?>
-                <td><?php echo $r->nombre_empre; ?></td>
-                <td><?php echo $r->categoria; ?></td>
-                <td><?php echo $r->direccion; ?></td>
-                <td><?php echo $r->telefono; ?></td>
+               <tr>
+                <td><?php echo $p->nombre_empre; ?></td>
+                <td><?php echo $p->categoria; ?></td>
+                <td><?php echo $p->direccion; ?></td>
+                <td><?php echo $p->telefono; ?></td>
+                </tr>
  <?php endforeach; ?>
  </tbody>  
-
+ </table>
  <!-- Opcional agregar  para que lo vean los tecnicos-->

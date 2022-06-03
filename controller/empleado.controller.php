@@ -53,18 +53,21 @@ class EmpleadoController{
         $user->id_usuario = $_REQUEST['id'];
         $user->nombre = $_REQUEST['pNombre'];
         $user->contraseña = $_REQUEST['Cedula'];
-      //  $user->Empleado_idEmpleado = $_REQUEST['id'];
-
+      
         $emple->idEmpleado > 0 
             ? $this->model->Actualizar($emple,$user)
             : $this->model->Registrar($emple,$user);
         
-        header('Location: index.php?c=Empleado&a=Index');
+            require_once 'view/header.php';
+            require_once 'view/empleado/empleado.php';
+            require_once 'view/empleado/footer.php';
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id']);
         $this->model2->Eliminar($_REQUEST['id']);
-        header('Location: index.php?c=Empleado&a=Index');
+        require_once 'view/header.php';
+        require_once 'view/empleado/empleado.php';
+        require_once 'view/empleado/footer.php';
     }
 }

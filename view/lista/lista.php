@@ -1,7 +1,7 @@
 <h1 class="page-header">Registro de Lista Repuestos</h1>
 
 <div class="well well-sm text-right">
-    <!-- <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver mas detalles</a> -->
+    <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver mas detalles</a>
     <a class="btn btn-primary" href="?c=Lista&a=Crud">Nuevo Repuesto</a>
 </div>
 
@@ -24,10 +24,10 @@
                 <td>
                     <a href="?c=Lista&a=Crud&idProducto=<?php echo $r->idProducto; ?>">Editar</a>
                 </td>
-                <td> 
-                    <!-- arreglar el eliminar  -->
+                <!-- <td> 
+                    arreglar el eliminar 
                     <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Lista&a=Eliminar&idProducto=<?php echo $r->$idProducto; ?>">Eliminar</a>
-                </td>
+                </td> -->
             </tr>
             <?php endforeach; ?>
         </tbody>

@@ -27,18 +27,25 @@ class ListaController{
         require_once 'view/lista/footer.php';
     }
 
+    public function Mostrar(){
+        require_once 'view/header.php';
+        require_once 'view/lista/lista2.php';
+    }
+
     public function Guardar(){
         $emple = new Lista();
         
         $emple->idProducto = $_REQUEST['idProducto'];
         $emple->nombre_pieza = $_REQUEST['nombre_pieza'];
-        $emple->precio = $_REQUEST['precio'];
-        
-        // arreglar condicional para que registre y a la vez actualice
-        
-        $emple->idProducto > 0 
-            ? $this->model->Actualizar($emple)
-            : $this->model->Registrar($emple);
+        $emple->precio = $_REQUEST['precio'];  
+
+        $resp= $emple->Obtener($emple->idProducto);
+
+        if ($resp == true){
+            $this->model->Actualizar($emple);
+        } else {
+            $this->model->Registrar($emple);
+        }
         
             require_once 'view/header.php';
             require_once 'view/lista/lista.php';

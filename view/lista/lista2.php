@@ -1,10 +1,4 @@
-<h1 class="page-header">Registro de Lista Repuestos</h1>
-
-<!-- <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver mas detalles</a>
-    <a class="btn btn-primary" href="?c=Lista&a=Crud">Nuevo Repuesto</a>
-</div> -->
-
+<h1 class="page-header">Lista Repuestos</h1>
 
 <table class="table table-striped">
     <thead>
@@ -12,7 +6,6 @@
             <th>ID_Producto</th>
             <th>Nombre del Repuesto</th>
             <th>Precio</th>
-            <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>

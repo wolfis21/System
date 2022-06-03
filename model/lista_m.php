@@ -66,7 +66,7 @@ class Lista{
 			die($e->getMessage());
 		}
 	}
-
+    
     public function Actualizar($data){
         try{
             $sql = "UPDATE lista SET 

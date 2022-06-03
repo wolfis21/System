@@ -1,4 +1,4 @@
-<h1 class="page-header">Cliente</h1>
+<h1 class="page-header">Clientes</h1>
 
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=cliente&a=Index">Retroceder</a>
