@@ -29,6 +29,7 @@
                     <a href="?c=Proveedor&a=Crud&idProveedores=<?php echo $r->idProveedores; ?>">Editar</a>
                 </td>
                 <td>
+                    <!-- arreglar el eliminar  -->
                     <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Proveedor&a=Eliminar&idProveedores=<?php echo $r->$idProveedores; ?>">Eliminar</a>
                 </td>
             </tr>
