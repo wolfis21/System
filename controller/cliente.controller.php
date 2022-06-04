@@ -29,7 +29,6 @@ public function Crud(){
         $emple = $this->model->Obtener($_REQUEST['idCliente']);
     }
     
-
     require_once 'view/cliente/header.php';
     require_once 'view/cliente/cliente-editar.php';
     require_once 'view/cliente/footer.php';
@@ -38,6 +37,17 @@ public function Mostrar(){
 require_once 'view/cliente/header.php';
 require_once 'view/cliente/cliente2.php';
 } 
+//falta implementar
+public function Buscar(){
+    $emple = new Cliente();
+    $emple->Nombre = $_REQUEST['Nombre'];
+    
+    $this->model->Buscar($emple->Nombre);
+
+    require_once 'view/cliente/header.php';
+    require_once 'view/cliente/cliente-busqueda.php';
+    
+}
 
     public function Guardar(){
         $emple= new Cliente();

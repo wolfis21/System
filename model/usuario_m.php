@@ -39,9 +39,43 @@ class Usuario{
 		}
 	} 
 	public function verificar($nombre, $contrasena){
-		
-		
+			
 		$sql="SELECT * FROM usuario WHERE nombre='$nombre' AND contraseña='$contrasena'";
+		$query = $this->pdo->query($sql);
+		
+		if($query){
+			return $query->fetchAll(PDO::FETCH_ASSOC);
+		}else{	
+		 return false;
+		}
+	}
+	public function definirGere($nombre) {
+
+		$sql="SELECT Cargo FROM empleado WHERE pNombre = '$nombre' AND Cargo = 'Gerente'";
+		$query = $this->pdo->query($sql);
+		
+		if($query){
+			return $query->fetchAll(PDO::FETCH_ASSOC);
+		}else{	
+		 return false;
+		}
+	}
+	
+	public function definirTec($nombre) {
+
+		$sql="SELECT Cargo FROM empleado WHERE pNombre = '$nombre' AND Cargo = 'Tecnico'";
+		$query = $this->pdo->query($sql);
+		
+		if($query){
+			return $query->fetchAll(PDO::FETCH_ASSOC);
+		}else{	
+		 return false;
+		}
+	}
+	
+	public function definirAdm($nombre) {
+
+		$sql="SELECT Cargo FROM empleado WHERE pNombre = '$nombre' AND Cargo = 'Administrador'";
 		$query = $this->pdo->query($sql);
 		
 		if($query){
@@ -57,7 +91,6 @@ class Usuario{
 			$stm = $this->pdo
 			          ->prepare("SELECT * FROM usuario WHERE id_usuario= ?");
 			          
-
 			$stm->execute(array($id_usuario));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) 

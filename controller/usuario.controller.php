@@ -29,9 +29,24 @@ class UsuarioController{
         $user->contrasena = $_REQUEST['contraseña'];
        // $user->Empleado_idEmpleado = $_REQUEST['id'];
         
-        $resp=$user->verificar($user->nombre, $user->contrasena);
+        $resp = $user->verificar($user->nombre, $user->contrasena);
+        $gere = $user->definirGere($user->nombre);
+        $tec =  $user->definirTec($user->nombre);
+        $adm =  $user->definirAdm($user->nombre);
 
-        if($resp == true){
+        // selected para direccionar interfaz por rol
+   
+        if($resp == true && $gere == true){
+            
+            //home para los casos de gerente
+            header('location: home.php');
+        }else if ($resp == true && $tec == true){
+
+            //home para los casos de tecnico
+            header('location: home.php');
+        } else if ($resp == true && $adm == true){
+
+            //home para los casos de administrador
             header('location: home.php');
         } else{
         ?>

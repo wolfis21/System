@@ -54,6 +54,21 @@ class Cliente
 			die($e->getMessage());
 		}
 	}
+	// hay que hacer correpciones 
+	public function Buscar($Nombre){
+		try 
+		{
+			$stm = $this->pdo->prepare("SELECT * FROM cliente WHERE Nombre = $Nombre");
+			          
+			          
+			$stm->execute(array($Nombre));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+
+	}
 
 	public function Eliminar($idCliente)
 	{
