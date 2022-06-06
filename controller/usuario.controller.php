@@ -19,7 +19,8 @@ class UsuarioController{
         $user->contrasena = $_REQUEST['Cedula'];
         $user->Empleado_idEmpleado = $_REQUEST['id'];
 
-        header('Location: home.php');
+        require_once 'view/header.php';
+        require_once 'view/home_gere.php';
     }
     public function Entrar(){
         $user = new Usuario();
@@ -29,10 +30,28 @@ class UsuarioController{
         $user->contrasena = $_REQUEST['contraseña'];
        // $user->Empleado_idEmpleado = $_REQUEST['id'];
         
-        $resp=$user->verificar($user->nombre, $user->contrasena);
+        $resp = $user->verificar($user->nombre, $user->contrasena);
+        $gere = $user->definirGere($user->nombre);
+        $tec =  $user->definirTec($user->nombre);
+        $adm =  $user->definirAdm($user->nombre);
 
-        if($resp == true){
-            header('location: home.php');
+        // selected para direccionar interfaz por rol
+   
+        if($resp == true && $gere == true){
+            
+            //home para los casos de gerente
+            require_once 'view/header.php';
+            require_once 'view/home_gere.php';
+        }else if ($resp == true && $tec == true){
+
+            //home para los casos de tecnico
+            require_once 'view/header.php';
+            require_once 'view/home_tec.php';
+        } else if ($resp == true && $adm == true){
+
+            //home para los casos de administrador
+            require_once 'view/header.php';
+            require_once 'view/home_adm.php';
         } else{
         ?>
 		<h1> ERROR!!</h1>

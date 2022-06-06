@@ -1,7 +1,7 @@
 <h1 class="page-header">Registro de Proveedores</h1>
 
 <div class="well well-sm text-right">
-    <!-- <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver mas detalles</a> -->
+    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver mas detalles</a>
     <a class="btn btn-primary" href="?c=Proveedor&a=Crud">Nuevo Proveedor</a>
 </div>
 
@@ -28,9 +28,10 @@
                 <td>
                     <a href="?c=Proveedor&a=Crud&idProveedores=<?php echo $r->idProveedores; ?>">Editar</a>
                 </td>
-                <td>
+                <!-- <td>
+                    arreglar el eliminar 
                     <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Proveedor&a=Eliminar&idProveedores=<?php echo $r->$idProveedores; ?>">Eliminar</a>
-                </td>
+                </td> -->
             </tr>
             <?php endforeach; ?>
         </tbody>

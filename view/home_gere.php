@@ -8,7 +8,8 @@ require_once 'view/header.php';
     <a class="btn btn-primary" href="?c=Cliente&a=Index">Seccion Clientes</a>
     <a class="btn btn-primary" href="?c=Equipo&a=Index">Seccion Equipos</a>
     <a class="btn btn-primary" href="?c=Proveedor&a=Index">Seccion Proveedor</a>
-    <!-- <a href="home_login.php">Iniciar Sesion</a> -->
+    <a class="btn btn-primary" href="?c=Lista&a=Index">Seccion Lista</a>
+    
 </div>
 <?php
 
@@ -51,6 +52,19 @@ if (isset($_REQUEST['c']) == 'Empleado') {
     // Llama la accion
     call_user_func(array($controller, $accion));
 }   else if (isset($_REQUEST['c']) == 'Proveedor') {
+
+    // Obtenemos el controlador que queremos cargar
+    $controller = strtolower($_REQUEST['c']);
+    $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
+
+    // Instanciamos el controlador
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+
+    // Llama la accion
+    call_user_func(array($controller, $accion));
+}   else if (isset($_REQUEST['c']) == 'Lista') {
 
     // Obtenemos el controlador que queremos cargar
     $controller = strtolower($_REQUEST['c']);

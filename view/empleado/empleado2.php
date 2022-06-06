@@ -42,8 +42,8 @@
             </td>
             <td>
                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Empleado&a=Eliminar&id=<?php echo $r->idEmpleado; ?>">Eliminar</a>
-            </td>
-        </tr> -->
+            </td> -->
+        </tr> 
     <?php endforeach; ?>
     </tbody>
 </table> 
