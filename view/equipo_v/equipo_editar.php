@@ -29,7 +29,12 @@
         <label>Fecha de Ingreso</label>
         <input type="date" name="fecha_ingre" value="<?php echo $equi->fecha_ingre; ?>" class="form-control" placeholder="Ingrese la fecha de ingreso del equipo" data-validacion-tipo="requerido" />
     </div>
-    
+    <th>ID_Cliente: &nbsp&nbsp </th>
+    <select name="Cliente_idCliente" >
+            <?php foreach ($listare as $p): ?>
+                <option value="<?php echo $p['Cliente_idCliente']?>"><?php echo $p['Nombre']?></option>
+            <?php endforeach; ?>
+    </select>
     <hr />
     
     <div class="text-right">
