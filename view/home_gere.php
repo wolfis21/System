@@ -11,6 +11,10 @@ require_once 'view/header.php';
     <a class="btn btn-primary" href="?c=Lista&a=Index">Seccion Lista</a>
     
 </div>
+<!-- nota: puede hacer la seccion de empleado (crud), seccion proveedores (crud)
+operar la seccion entera de listas y gestiona usuarios por empleados -->
+
+
 <?php
 
 if (isset($_REQUEST['c']) == 'Empleado') {
