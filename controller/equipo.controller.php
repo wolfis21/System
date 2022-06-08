@@ -27,6 +27,10 @@ class EquipoController{
         require_once 'view/equipo_v/equipo_editar.php';
         require_once 'view/footer.php';
     }
+    public function Mostrar(){
+        require_once 'view/header.php';
+        require_once 'view/equipo/equipo2.php';
+       } 
 
     public function Guardar(){
         $equi = new Equipo();
