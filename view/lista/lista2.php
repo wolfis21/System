@@ -20,5 +20,6 @@
     </table> 
     <br>
     <div align="center">
-    <a class="btn btn-primary" href="home.php">Ir a Home</a>
+    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+    <!-- <a class="btn btn-primary" href="home.php">Ir a Home</a> -->
     </div>

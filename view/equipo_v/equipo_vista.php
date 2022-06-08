@@ -36,5 +36,5 @@
     </tbody>
 </table> 
 <div align="center">
-    <a class="btn btn-primary" href="home.php">Ir a Home</a>
-    </div>
+ <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
+</div>

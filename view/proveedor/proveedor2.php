@@ -21,4 +21,7 @@
  <?php endforeach; ?>
  </tbody>  
  </table>
- <!-- Opcional agregar  para que lo vean los tecnicos-->
+
+ <div align="center">
+ <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
+</div>
