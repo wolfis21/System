@@ -14,6 +14,8 @@ require_once 'view/header.php';
     <!-- carta de entregta gestion -->
 </div>
 
+<h1 class="page-header"> ADMINISTRADOR </h1>
+
 <?php
 
 if (isset($_REQUEST['c']) == 'Empleado') {

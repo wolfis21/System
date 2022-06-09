@@ -39,6 +39,20 @@ class Cliente
 			die($e->getMessage());
 		}
 	}
+	
+	public function ListarCli()
+	{
+		try
+		{
+			$this->consulta = $this->pdo->prepare("SELECT * FROM cliente");
+            $this->consulta->execute();
+            return $this->consulta;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
 	public function Obtener($idCliente)
 	{
@@ -94,7 +108,7 @@ class Cliente
 						Apellido            = ?, 
 						Direccion           = ?,
 						Telefono            = ?,
-						Correos             = ?,
+						Correo             = ?,
                         Empleado_idEmpleado = ?
 						
 				    WHERE idCliente = ?";

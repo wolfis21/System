@@ -40,18 +40,23 @@
         <label>Correo</label>
         <input type="text" name="Correo" value="<?php echo $emple->Correo; ?>" class="form-control" placeholder="Ingrese su correo" data-validacion-tipo="requerido" />
     </div>
-     
-    <th>ID_Empleado: &nbsp&nbsp </th>
+
+     <div class="form-group">
+    <label>Empleado Responsable: &nbsp&nbsp</label> 
     <select name="idEmpleado" >
             <?php foreach ($listare as $p): ?>
                 <option value="<?php echo $p['idEmpleado']?>"><?php echo $p['pNombre']?></option>
             <?php endforeach; ?>
     </select>
+    </div>
+
     <div class="text-right">
         <button class="btn btn-success">Guardar</button>
     </div>
 </form>
-
+<div align="center">
+    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+    </div>
 <script>
     $(document).ready(function(){
         $("#frm-alumno").submit(function(){

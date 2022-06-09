@@ -47,7 +47,7 @@ class Empleado
 	{
 		try
 		{
-			$this->consulta = $this->pdo->prepare('SELECT * FROM empleado');
+			$this->consulta = $this->pdo->prepare("SELECT * FROM empleado WHERE Cargo = 'Tecnico'");
             $this->consulta->execute();
             return $this->consulta;
 		}

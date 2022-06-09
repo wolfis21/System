@@ -1,7 +1,9 @@
 <h1 class="page-header">Clientes</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=cliente&a=Index">Retroceder</a>
+<div align="right">
+    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+</div>
 </div>
 <!-- Falta implementar -->
 <form method="post" enctype="multipart/form-data" id="frm-alumno" action="?c=Cliente&a=Buscar">

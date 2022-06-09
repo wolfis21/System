@@ -31,6 +31,9 @@
             <td>
                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Equipo&a=Eliminar&idEquipo=<?php echo $r->idEquipo; ?>">Eliminar</a>
             </td>
+            <td>
+            <a href="?c=Equipo&a=Crud2&idEquipo=<?php echo $r->idEquipo; ?>">Ag. Revision</a>
+            </td>
         </tr>
     <?php endforeach; ?>
     </tbody>

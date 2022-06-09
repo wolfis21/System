@@ -8,7 +8,12 @@
 </ol>
 
 <form id="frm-alumno" action="?c=Equipo&a=Guardar" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $equi->idEquipo; ?>" />
+    <input type="hidden" name="idEquipo" value="<?php echo $equi->idEquipo; ?>" />
+
+    <div class="form-group">
+        <label>ID del Equipo</label>
+        <input type="text" name="idCodigo" value="<?php echo $equi->idCodigo; ?>" class="form-control" placeholder="Ingrese el serial del equipo" data-validacion-tipo="requerido" />
+    </div>
 
     <div class="form-group">
         <label>Nombre del Equipo</label>
@@ -29,18 +34,24 @@
         <label>Fecha de Ingreso</label>
         <input type="date" name="fecha_ingre" value="<?php echo $equi->fecha_ingre; ?>" class="form-control" placeholder="Ingrese la fecha de ingreso del equipo" data-validacion-tipo="requerido" />
     </div>
-    <th>ID_Cliente: &nbsp&nbsp </th>
-    <select name="Cliente_idCliente" >
+   
+    <div class="form-group">
+    <label>Cliente: &nbsp&nbsp</label> 
+    <select name="idCliente" >
             <?php foreach ($listare as $p): ?>
-                <option value="<?php echo $p['Cliente_idCliente']?>"><?php echo $p['Nombre']?></option>
+                <option value="<?php echo $p['idCliente']?>"><?php echo $p['Nombre']?></option>
             <?php endforeach; ?>
     </select>
-    <hr />
+    </div>
     
     <div class="text-right">
         <button class="btn btn-success">Guardar</button>
     </div>
 </form>
+
+<div align="center">
+    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+    </div>
 
 <script>
     $(document).ready(function(){

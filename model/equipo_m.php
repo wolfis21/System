@@ -5,6 +5,7 @@ class Equipo{
     private $pdo;
 
     public $idEquipo;
+	public $idCodigo;
     public $nombre_e;
     public $descripcion;
     public $prev_diag;
@@ -69,6 +70,7 @@ class Equipo{
 		try 
 		{
 			$sql = "UPDATE equipo SET 
+						idCodigo		  = ?,
 						nombre_e           = ?,
 						descripcion        = ?, 
 						prev_diag          = ?,
@@ -80,11 +82,12 @@ class Equipo{
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
+						$data->idCodigo,
 						$data->nombre_e,
                         $data->descripcion,
 						$data->prev_diag, 
                         $data->fecha_ingre,
-						$data->Cliente_idCliente,
+						$data->Cliente_idCliente
 					)
 				);
 		} catch (Exception $e) 
@@ -97,18 +100,14 @@ class Equipo{
 	{
 		try 
 		{
-		$sql = "INSERT INTO equipo (idEquipo,nombre_e, descripcion, prev_diag, fecha_ingre, Cliente_idCliente) 
+		$sql = "INSERT INTO equipo (idCodigo,nombre_e, descripcion, prev_diag, fecha_ingre, Cliente_idCliente) 
 		        VALUES (?, ?, ?, ?, ?, ?)";
 
-
-					// $sql3= "UPDATE usuario u JOIN empleado e on e.idEmpleado=u.Empleado_idEmpleado";
-
-					// falta de registro de la clave foranea en la tabla de cliente
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
-					$data->idEquipo,
+					$data->idCodigo,
                     $data->nombre_e,
                     $data->descripcion,
                     $data->prev_diag, 
@@ -117,7 +116,6 @@ class Equipo{
                 )
 			);
 			
-				// $this->pdo->prepare($sql3)->execute();
 
 		} catch (Exception $e) 
 		{

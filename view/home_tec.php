@@ -20,6 +20,7 @@ require_once 'view/header.php';
     
 </div>
 
+<h1 class="page-header"> TECNICO </h1>
 <?php
 if (isset($_REQUEST['c']) == 'Cliente') {
 

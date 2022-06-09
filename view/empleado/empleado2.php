@@ -1,7 +1,9 @@
 <h1 class="page-header">Empleados</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Empleado&a=Index">Retroceder</a>
+<div align="right">
+    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+</div>
 </div>
 
 <table class="table table-striped">
