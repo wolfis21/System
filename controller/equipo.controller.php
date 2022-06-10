@@ -1,13 +1,15 @@
 <?php
 require_once 'model/equipo_m.php';
 require_once 'model/cliente_m.php';
+require_once 'model/revision_m.php';
 class EquipoController{
     
     private $model;
-    
+    private $model2;
     
     public function __CONSTRUCT(){
         $this->model = new Equipo();
+        $this->model2 = new Rev();
     }
     
     public function Index(){
@@ -30,10 +32,30 @@ class EquipoController{
         require_once 'view/equipo_v/equipo_editar.php';
         require_once 'view/footer.php';
     }
+    public function Crud2(){
+        $equi = new Equipo();
+        $rev = new Rev();
+        
+        $listare = $equi ->Listarequi();
+
+        if(isset($_REQUEST['idEquipo'])){
+            $equi = $this->model->Obtener($_REQUEST['idEquipo']);
+            // $rev->Equipo_idEquipo = $_REQUEST['idEquipo'];
+
+        }
+
+        require_once 'view/header.php';
+        require_once 'view/equipo_v/revision/revision-editar.php';
+        require_once 'view/footer.php';
+    }
     public function Mostrar(){
         require_once 'view/header.php';
         require_once 'view/equipo_v/equipo2.php';
-       } 
+    }
+    public function MostrarRev(){
+        require_once 'view/header.php';
+        require_once 'view/equipo_v/revision/revision-vista.php';
+    } 
 
     public function Guardar(){
         $equi = new Equipo();
@@ -46,8 +68,6 @@ class EquipoController{
         $equi->fecha_ingre = $_REQUEST['fecha_ingre'];
         $equi->Cliente_idCliente = $_REQUEST['idCliente'];
         
-        
-
         $equi->idEquipo > 0 
             ? $this->model->Actualizar($equi)
             : $this->model->Registrar($equi);
@@ -56,11 +76,34 @@ class EquipoController{
     require_once 'view/equipo_v/equipo_vista.php';
     require_once 'view/equipo_v/footer.php';
     }
+
+    public function Guardar2(){
+        $rev = new Rev();
+        $equi = new Equipo();
+
+        $rev->idRev_equipo = $_REQUEST['idRev_equipo'];
+        $rev->fecha_rev = $_REQUEST['fecha_rev'];
+        $rev->descrip_rev = $_REQUEST['descrip_rev'];
+        $rev->descrip_reemp = $_REQUEST['descrip_reemp'];
+        $rev->presupuesto = $_REQUEST['presupuesto'];
+        $rev->Equipo_idEquipo = $_REQUEST['idEquipo'];
+        
     
+        $rev->idRev_equipo > 0 
+            ? $this->model2->Actualizar($rev)
+            : $this->model2->Registrar($rev);
+        
+    require_once 'view/header.php';
+    require_once 'view/equipo_v/equipo_vista.php';
+    require_once 'view/equipo_v/footer.php';
+    }
+    
+    //verificar el eliminar en cascada
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['idEquipo']);
-        require_once 'view/equipo/header.php';
+        
+        require_once 'view/header.php';
         require_once 'view/equipo_v/equipo_vista.php';
-        require_once 'view/equipo/footer.php';
+        require_once 'view/equipo_v/footer.php';
     }
 }

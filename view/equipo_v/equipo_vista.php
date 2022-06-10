@@ -1,6 +1,7 @@
 <h1 class="page-header">Registro de Equipos</h1>
 
 <div class="well well-sm text-right">
+    <a class="btn btn-primary" href="?c=Equipo&a=MostrarRev">Equipos Revisados</a>
     <a class="btn btn-primary" href="?c=Equipo&a=Crud">Nuevo Equipo</a>
 </div>
 
@@ -8,6 +9,7 @@
     <thead>
         <tr>
             <th>Id Equipo</th>
+            <th>idCodigo</th>
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Diagnostico</th>
@@ -20,6 +22,7 @@
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
             <td><?php echo $r->idEquipo?></td>
+            <td><?php echo $r->idCodigo?></td>
             <td><?php echo $r->nombre_e; ?></td>
             <td><?php echo $r->descripcion; ?></td>
             <td><?php echo $r->prev_diag; ?></td>

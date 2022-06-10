@@ -35,6 +35,18 @@ class Equipo{
 		catch(Exception $e)
 		{
 			die($e->getMessage());
+		} 
+	}
+	public function Listarequi(){
+		try
+		{
+			$this->consulta = $this->pdo->prepare("SELECT * FROM equipo");
+            $this->consulta->execute();
+            return $this->consulta;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
 		}
 	}
 
