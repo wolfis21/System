@@ -1,5 +1,9 @@
 <h1 class="page-header">Equipos Revisados</h1>
 
+<div class="well well-sm text-right">
+    <h3>Procesamiento</h3>
+</div>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -8,7 +12,8 @@
             <th>Descripcion revision</th>
             <th>Descripcion reemplazo</th>
             <th>Presupuesto</th>
-            <th style="width:60px;">ID Equipo</th>
+            <th style="width:30px;">ID Equipo</th>
+            <th>Carta de Entrega</th>
         </tr>
     </thead>
     <tbody>
@@ -20,15 +25,9 @@
             <td><?php echo $r->descrip_reemp; ?></td>
             <td><?php echo $r->presupuesto; ?></td>
             <td><?php echo $r->Equipo_idEquipo; ?></td>
-            <!-- <td>
-                <a href="?c=Equipo&a=Crud&idEquipo=<?php echo $r->idEquipo; ?>">Editar</a>
-            </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Equipo&a=Eliminar&idEquipo=<?php echo $r->idEquipo; ?>">Eliminar</a>
+                    <a onclick="javascript:return confirm('¿Seguro de procesar carta de entrega?');" href=" =<?php echo $r->idRev_equipo; ?>">Solicitar</a>
             </td>
-            <td>
-            <a href="?c=Equipo&a=Crud2&idEquipo=<?php echo $r->idEquipo; ?>">Ag. Revision</a>
-            </td> -->
         </tr>
     <?php endforeach; ?>
     </tbody>

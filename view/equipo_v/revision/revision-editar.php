@@ -12,7 +12,7 @@
 <input type="hidden" name="idRev_equipo" value="<?php echo $rev->idRev_equipo; ?>" />
 
     <div class="form-group">
-    <label>Confirmacion de Equipo por ID: &nbsp&nbsp</label> 
+    <label>Confirmacion de Equipo es: &nbsp&nbsp</label> 
     <select name="idEquipo" >
             <?php foreach ($listare as $p): ?>
                 <option value="<?php echo $p['idEquipo']?>"><?php echo $p['nombre_e']?></option>
