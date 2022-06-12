@@ -26,7 +26,7 @@ class Rev{
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM rev_equipo");
+			$stm = $this->pdo->prepare("SELECT * FROM rev_equipo, equipo WHERE idEquipo = Equipo_idEquipo");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

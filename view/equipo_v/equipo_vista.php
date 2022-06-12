@@ -8,26 +8,27 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Id Equipo</th>
-            <th>idCodigo</th>
+            <th>Serial / Codigo</th>
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Diagnostico</th>
             <th style="width:120px;">Fecha de ingreso</th>
             <th style="width:60px;">ID Cliente</th>
+            <th style="width:60px;">Cliente</th>
             <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
-            <td><?php echo $r->idEquipo?></td>
             <td><?php echo $r->idCodigo?></td>
             <td><?php echo $r->nombre_e; ?></td>
             <td><?php echo $r->descripcion; ?></td>
             <td><?php echo $r->prev_diag; ?></td>
             <td><?php echo $r->fecha_ingre; ?></td>
-            <td><?php echo $r->Cliente_idCliente; ?></td>
+            <td><?php echo $r->idCedula; ?></td>
+            <td><?php echo $r->Nombre; ?></td>
+            <td><?php echo $r->Apellido; ?></td>
             <td>
                 <a href="?c=Equipo&a=Crud&idEquipo=<?php echo $r->idEquipo; ?>">Editar</a>
             </td>

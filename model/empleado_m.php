@@ -43,6 +43,19 @@ class Empleado
 			die($e->getMessage());
 		}
 	}
+	public function ListarGe()
+	{
+		try
+		{
+			$this->consulta = $this->pdo->prepare("SELECT * FROM empleado WHERE Cargo = 'Gerente'");
+            $this->consulta->execute();
+            return $this->consulta;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 	public function ListarEm()
 	{
 		try

@@ -1,7 +1,8 @@
 <h1 class="page-header">Registro de Proveedores</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver mas detalles</a>
+<!--quitar el ver mas, esta rebundante 
+    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver mas detalles</a> -->
     <a class="btn btn-primary" href="?c=Proveedor&a=Crud">Nuevo Proveedor</a>
 </div>
 

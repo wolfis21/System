@@ -24,7 +24,7 @@
                 <td><?php echo $r->pNombre; ?></td>
                 <td><?php echo $r->pApellido; ?></td>
                 <td><?php echo $r->Direccion; ?></td>
-                <td><?php echo $r->Genero == 1 ? 'Hombre' : 'Mujer'; ?></td>
+                <td><?php echo $r->Genero == 1 ? 'Masculino' : 'Feminino'; ?></td>
                 <td><?php echo $r->Fecha_nacimiento; ?></td>
                 <td>
                     <a href="?c=Empleado&a=Crud&id=<?php echo $r->idEmpleado; ?>">Editar</a>

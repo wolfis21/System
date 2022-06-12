@@ -21,7 +21,7 @@
             <th>Direccion</th>
             <th>Telefono</th>
             <th>Correo</th>
-            <th>ID_empleado</th>
+            <th>Empleado responsable</th>
 
         </tr>
     </thead>
@@ -35,7 +35,7 @@
             <td><?php echo $r->Direccion; ?></td>
             <td><?php echo $r->Telefono; ?></td>
             <td><?php echo $r->Correo; ?></td>
-            <td><?php echo $r->Empleado_idEmpleado; ?></td>
+            <td><?php echo $r->pNombre; ?></td>
          
             <!-- <td>
                 <a href="?c=Empleado&a=Crud&id=<?php echo $r->idcliente; ?>">Editar</a>
