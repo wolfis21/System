@@ -1,4 +1,15 @@
-<h1 class="page-header">Registro de Empleados</h1>
+<h1 class="page-header">
+    
+    <div class="well well-sm text-right">
+    Registro de Empleados
+    <a class="btn btn-primary" href="?c=Cliente&a=Index">Seccion Clientes</a>
+    <a class="btn btn-primary" href="?c=Equipo&a=Index">Seccion Equipos</a>
+    <!-- el agregar equipos viene despues de la seccion equipos -->
+    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver Proveedores</a>
+    <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver Lista</a>
+    <!-- carta de entrega por implementar -->
+    </div>
+</h1>
 
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=Empleado&a=Mostrar">Ver mas detalles</a>
@@ -37,6 +48,3 @@
         </tbody>
     </table> 
     <br>
-<div align="center">
- <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
-</div>

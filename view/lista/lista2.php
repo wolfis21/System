@@ -1,4 +1,15 @@
-<h1 class="page-header">Lista Repuestos</h1>
+<h1 class="page-header">
+    
+    <div class="well well-sm text-right">
+    Lista Repuestos
+    <a class="btn btn-primary" href="?c=Cliente&a=Index">Seccion Clientes</a>
+    <a class="btn btn-primary" href="?c=Equipo&a=Index">Seccion Equipos</a>
+    <!-- el agregar equipos viene despues de la seccion equipos -->
+    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver Proveedores</a>
+    <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver Lista</a>
+    <!-- carta de entrega por implementar -->
+    </div>
+</h1>
 
 <table class="table table-striped">
     <thead>
@@ -19,7 +30,3 @@
         </tbody>
     </table> 
     <br>
-    <div align="center">
-    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
-    <!-- <a class="btn btn-primary" href="home.php">Ir a Home</a> -->
-    </div>
