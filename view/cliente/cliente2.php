@@ -2,7 +2,7 @@
 
 <div class="well well-sm text-right">
 <div align="right">
-    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+    <a href="?c=Cliente&a=Index" class="btn btn-primary">Volver atrás</a>
 </div>
 </div>
 <!-- Falta implementar -->
