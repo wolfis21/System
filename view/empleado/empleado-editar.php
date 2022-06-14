@@ -74,6 +74,10 @@
     </div>
 </form>
 
+<div align="center">
+    <a href="?c=Empleado&a=Index" class="btn btn-primary">Volver atrás</a>
+    </div>
+
 <script>
     $(document).ready(function(){
         $("#frm-alumno").submit(function(){

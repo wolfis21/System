@@ -20,27 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `s_system`
 --
-
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `carta`
---
-
-CREATE TABLE `carta` (
-  `idCarta` int(11) NOT NULL,
-  `fecha_e` date NOT NULL,
-  `impuesto_m` float NOT NULL,
-  `impuesto_o` float NOT NULL,
-  `total` decimal(2,0) NOT NULL,
-  `Rev_equipo_idRev_equipo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `cliente`
 --
+CREATE DATABASE s_system;
+USE s_system;
 
 CREATE TABLE `cliente` (
   `idCliente` int(11) NOT NULL,
@@ -190,13 +174,6 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `contraseña`, `Empleado_idEmplea
 --
 
 --
--- Indices de la tabla `carta`
---
-ALTER TABLE `carta`
-  ADD PRIMARY KEY (`idCarta`),
-  ADD KEY `carta_ibfk_1` (`Rev_equipo_idRev_equipo`);
-
---
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
@@ -254,13 +231,6 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
---
--- AUTO_INCREMENT de la tabla `carta`
---
-ALTER TABLE `carta`
-  MODIFY `idCarta` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
@@ -299,12 +269,6 @@ ALTER TABLE `usuario`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `carta`
---
-ALTER TABLE `carta`
-  ADD CONSTRAINT `carta_ibfk_1` FOREIGN KEY (`Rev_equipo_idRev_equipo`) REFERENCES `rev_equipo` (`idRev_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `cliente`

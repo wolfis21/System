@@ -22,6 +22,9 @@ class UsuarioController{
         require_once 'view/header.php';
         require_once 'view/home_gere.php';
     }
+    public function Cerrar(){
+        require_once 'index.php';
+    }
     public function Entrar(){
         $user = new Usuario();
         

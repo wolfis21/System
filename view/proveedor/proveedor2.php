@@ -1,4 +1,11 @@
-<h1 class="page-header">Proveedores</h1>
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
+<h1 class="page-header">
+    <div class="well well-sm text-right">
+    <a class="btn btn-primary" href="javascript: history.go(-1)">Volver atrás</a> 
+    <p align="left">Proveedores</p>
+    </div>
+</h1>
 
 <table class="table table-striped">
     <thead>
@@ -21,7 +28,3 @@
  <?php endforeach; ?>
  </tbody>  
  </table>
-
- <div align="center">
- <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
-</div>

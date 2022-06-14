@@ -1,7 +1,16 @@
-<h1 class="page-header">Registro de Proveedores</h1>
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
+<h1 class="page-header">
+    <div class="well well-sm text-right">
+        <a class="btn btn-primary" href="?c=Empleado&a=Index">Seccion Empleados</a>
+        <a class="btn btn-primary" href="?c=Lista&a=Index">Seccion Lista</a>
+        <p align="left"> Registro de Proveedores </p>
+    </div>
+</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver mas detalles</a>
+<!--quitar el ver mas, esta rebundante 
+    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver mas detalles</a> -->
     <a class="btn btn-primary" href="?c=Proveedor&a=Crud">Nuevo Proveedor</a>
 </div>
 
@@ -37,6 +46,3 @@
         </tbody>
     </table> 
     <br>
-<div align="center">
- <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
-</div>

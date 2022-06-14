@@ -1,4 +1,15 @@
-<h1 class="page-header">Registro de Equipos</h1>
+
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
+<h1 class="page-header">
+<div class="well well-sm text-right">
+    <a class="btn btn-primary" href="?c=Cliente&a=Index">Seccion Clientes</a>
+    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver Proveedores</a>
+    <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver Lista</a>
+    <!-- carta de entrega por implementar -->
+    <p align="left"> Registro de Equipos </p>
+    </div>
+</h1>
 
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=Equipo&a=MostrarRev">Equipos Revisados</a>
@@ -8,26 +19,27 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Id Equipo</th>
-            <th>idCodigo</th>
+            <th>Serial / Codigo</th>
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Diagnostico</th>
             <th style="width:120px;">Fecha de ingreso</th>
             <th style="width:60px;">ID Cliente</th>
+            <th style="width:60px;">Cliente</th>
             <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
-            <td><?php echo $r->idEquipo?></td>
             <td><?php echo $r->idCodigo?></td>
             <td><?php echo $r->nombre_e; ?></td>
             <td><?php echo $r->descripcion; ?></td>
             <td><?php echo $r->prev_diag; ?></td>
             <td><?php echo $r->fecha_ingre; ?></td>
-            <td><?php echo $r->Cliente_idCliente; ?></td>
+            <td><?php echo $r->idCedula; ?></td>
+            <td><?php echo $r->Nombre; ?></td>
+            <td><?php echo $r->Apellido; ?></td>
             <td>
                 <a href="?c=Equipo&a=Crud&idEquipo=<?php echo $r->idEquipo; ?>">Editar</a>
             </td>
@@ -41,6 +53,3 @@
     <?php endforeach; ?>
     </tbody>
 </table> 
-<div align="center">
- <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
-</div>

@@ -1,3 +1,4 @@
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
 <h1 class="page-header">Equipos Revisados</h1>
 
 <div class="well well-sm text-right">
@@ -7,26 +8,24 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>idRev_equipo</th>
+            <th style="width: 60px;">Nombre del Equipo</th>
             <th>Fecha revision</th>
             <th>Descripcion revision</th>
             <th>Descripcion reemplazo</th>
             <th>Presupuesto</th>
-            <th style="width:30px;">ID Equipo</th>
             <th>Carta de Entrega</th>
         </tr>
     </thead>
     <tbody>
     <?php foreach($this->model2->Listar() as $r): ?>
         <tr>
-            <td><?php echo $r->idRev_equipo;?></td>
+            <td><?php echo $r->nombre_e; ?></td>
             <td><?php echo $r->fecha_rev;?></td>
             <td><?php echo $r->descrip_rev; ?></td>
             <td><?php echo $r->descrip_reemp; ?></td>
             <td><?php echo $r->presupuesto; ?></td>
-            <td><?php echo $r->Equipo_idEquipo; ?></td>
             <td>
-                    <a onclick="javascript:return confirm('¿Seguro de procesar carta de entrega?');" href=" =<?php echo $r->idRev_equipo; ?>">Solicitar</a>
+                    <a onclick="javascript:return confirm('¿Seguro de procesar carta de entrega?');" href="?c=Equipo&a=Solicitar&idRev_equipo=<?php echo $r->idRev_equipo; ?>">Solicitar</a>
             </td>
         </tr>
     <?php endforeach; ?>

@@ -1,4 +1,12 @@
-<h1 class="page-header">Registro de Empleados</h1>
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
+<h1 class="page-header"> 
+    <div class="well well-sm text-right">
+    <a class="btn btn-primary" href="?c=Proveedor&a=Index">Seccion Proveedor</a>
+    <a class="btn btn-primary" href="?c=Lista&a=Index">Seccion Lista</a>
+    <p align="left"> Registro de Empleados</p>
+    </div>
+</h1>
 
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=Empleado&a=Mostrar">Ver mas detalles</a>
@@ -24,7 +32,7 @@
                 <td><?php echo $r->pNombre; ?></td>
                 <td><?php echo $r->pApellido; ?></td>
                 <td><?php echo $r->Direccion; ?></td>
-                <td><?php echo $r->Genero == 1 ? 'Hombre' : 'Mujer'; ?></td>
+                <td><?php echo $r->Genero == 1 ? 'Masculino' : 'Feminino'; ?></td>
                 <td><?php echo $r->Fecha_nacimiento; ?></td>
                 <td>
                     <a href="?c=Empleado&a=Crud&id=<?php echo $r->idEmpleado; ?>">Editar</a>
@@ -37,6 +45,3 @@
         </tbody>
     </table> 
     <br>
-<div align="center">
- <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
-</div>

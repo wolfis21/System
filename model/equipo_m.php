@@ -27,7 +27,7 @@ class Equipo{
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM equipo");
+			$stm = $this->pdo->prepare("SELECT * FROM equipo, cliente WHERE idCliente = Cliente_idCliente");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

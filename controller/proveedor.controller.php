@@ -21,7 +21,7 @@ class ProveedorController{
         $emple = new Proveedor();
         $asis = new Empleado();
 
-        $listare = $asis ->ListarEm();
+        $listare = $asis ->ListarGe();
 
         if(isset($_REQUEST['idProveedores'])){
             $emple = $this->model->Obtener($_REQUEST['idProveedores']);

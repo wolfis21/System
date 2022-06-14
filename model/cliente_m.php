@@ -29,7 +29,7 @@ class Cliente
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM cliente");
+			$stm = $this->pdo->prepare("SELECT * FROM cliente, empleado WHERE idEmpleado = Empleado_idEmpleado");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

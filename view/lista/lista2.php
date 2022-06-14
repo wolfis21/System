@@ -1,4 +1,11 @@
-<h1 class="page-header">Lista Repuestos</h1>
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
+<h1 class="page-header">
+    <div class="well well-sm text-right">
+     <a class="btn btn-primary" href="javascript: history.go(-1)">Volver atrás</a> 
+     <p align="left">lista de Repuestos</p>
+</div>
+</h1>
 
 <table class="table table-striped">
     <thead>
@@ -19,7 +26,3 @@
         </tbody>
     </table> 
     <br>
-    <div align="center">
-    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
-    <!-- <a class="btn btn-primary" href="home.php">Ir a Home</a> -->
-    </div>
