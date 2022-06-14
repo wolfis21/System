@@ -36,16 +36,22 @@ public function Crud(){
 public function Mostrar(){
 require_once 'view/cliente/header.php';
 require_once 'view/cliente/cliente2.php';
+
 } 
 //falta implementar
 public function Buscar(){
     $emple = new Cliente();
-    $emple->Nombre = $_REQUEST['Nombre'];
-    
-    $this->model->Buscar($emple->Nombre);
+     if(!empty($_POST)) {
+        $valor = $_POST['buscar'];
+        if (!empty($valor)){
+            $where = "WHERE Nombre LIKE '%$valor%'";
+$emple = $where;
+$this->model->Buscar($emple);
+             }
+         } 
 
-    require_once 'view/cliente/header.php';
-    require_once 'view/cliente/cliente-busqueda.php';
+require_once 'view/cliente/header.php';
+require_once 'view/cliente/cliente2.php';
     
 }
 

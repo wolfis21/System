@@ -67,16 +67,22 @@ class Cliente
 		{
 			die($e->getMessage());
 		}
-	}
-	// hay que hacer correpciones 
-	public function Buscar($Nombre){
+	} 
+	public function Buscar($where){
 		try 
-		{
-			$stm = $this->pdo->prepare("SELECT * FROM cliente WHERE Nombre = $Nombre");
-			          
-			          
-			$stm->execute(array($Nombre));
-			return $stm->fetch(PDO::FETCH_OBJ);
+		{ 
+			if(!empty($_POST)) {
+				$valor = $_POST['buscar'];
+				if (!empty($valor)){
+					$where = "WHERE Nombre LIKE '%$valor%'";
+					 }
+				 }
+				 $consulta = "SELECT * FROM cliente $where";
+				 $resultado = $this->pdo->query($consulta);
+
+				 return $resultado->fetchAll(PDO::FETCH_OBJ);
+				 
+				 
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
