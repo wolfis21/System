@@ -2,9 +2,8 @@
 $where = "";
 ?>
 
-=======
 <h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
->>>>>>> 2d6d28c23221998bd0b379edc2e3cc758464616f
+
 <h1 class="page-header">Clientes</h1>
 
 <div class="well well-sm text-right">
