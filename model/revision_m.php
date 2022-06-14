@@ -50,7 +50,28 @@ class Rev{
 			die($e->getMessage());
 		}
 	}
-   
+	
+	public function Buscar($where){
+		try 
+		{ 
+			if(!empty($_POST)) {
+				$valor = $_POST['buscar'];
+				if (!empty($valor)){
+					$where = "WHERE nombre_e LIKE '%$valor%'";
+					 }
+				 }
+				 $consulta = "SELECT * FROM equipo $where";
+				 $resultado = $this->pdo->query($consulta);
+
+				 return $resultado->fetchAll(PDO::FETCH_OBJ);
+				 				 
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+
+	}
+
     public function Eliminar($idRev_equipo)
 	{
 		try 
