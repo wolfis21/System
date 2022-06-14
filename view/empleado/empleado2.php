@@ -1,3 +1,7 @@
+<?php 
+$where = "";
+?>
+
 <h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
 <h1 class="page-header">Empleados</h1>
 
@@ -6,6 +10,11 @@
     <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
 </div>
 </div>
+
+<form action="?c=Empleado&a=Buscar" method="post">
+<input type="text" name="buscar" placeholder="Buscar por Nombre"/>
+<input type="submit" name="buscando" value="Buscar"/>
+</form>
 
 <table class="table table-striped">
     <thead>
@@ -26,7 +35,7 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach($this->model->Listar() as $r): ?>
+    <?php foreach($this->model->Buscar($where) as $r): ?>
         <tr>
             <td><?php echo $r->idEmpleado; ?></td>
             <td><?php echo $r->Cedula; ?></td>

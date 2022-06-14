@@ -51,7 +51,7 @@ foreach($this->model->Buscar($where) as $r):
             <td><?php echo $r->Direccion; ?></td>
             <td><?php echo $r->Telefono; ?></td>
             <td><?php echo $r->Correo; ?></td>
-            <td><?php echo $r->pNombre; ?></td>
+            <td><?php echo $r->Empleado_idEmpleado; ?></td>
          
             <!-- <td>
                 <a href="?c=Empleado&a=Crud&id=<?php echo $r->idcliente; ?>">Editar</a>

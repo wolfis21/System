@@ -68,6 +68,27 @@ class Proveedor{
 		}
 	}
 
+	public function Buscar($where){
+		try 
+		{ 
+			if(!empty($_POST)) {
+				$valor = $_POST['buscar'];
+				if (!empty($valor)){
+					$where = "WHERE nombre_empre LIKE '%$valor%'";
+					 }
+				 }
+				 $consulta = "SELECT * FROM proveedores $where";
+				 $resultado = $this->pdo->query($consulta);
+
+				 return $resultado->fetchAll(PDO::FETCH_OBJ);
+				 				 
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+
+	}
+
 	public function Eliminar($idProveedores)
 	{
 		try 

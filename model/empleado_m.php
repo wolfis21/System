@@ -84,6 +84,27 @@ class Empleado
 		}
 	}
 
+	public function Buscar($where){
+		try 
+		{ 
+			if(!empty($_POST)) {
+				$valor = $_POST['buscar'];
+				if (!empty($valor)){
+					$where = "WHERE pNombre LIKE '%$valor%'";
+					 }
+				 }
+				 $consulta = "SELECT * FROM empleado $where";
+				 $resultado = $this->pdo->query($consulta);
+
+				 return $resultado->fetchAll(PDO::FETCH_OBJ);
+				 				 
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+
+	}
+
 	public function Eliminar($idEmpleado)
 	{
 		try 

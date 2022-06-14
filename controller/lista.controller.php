@@ -32,6 +32,22 @@ class ListaController{
         require_once 'view/lista/lista2.php';
     }
 
+    public function Buscar(){
+        $emple = new Lista();
+         if(!empty($_POST)) {
+            $valor = $_POST['buscar'];
+            if (!empty($valor)){
+                $where = "WHERE nombre_pieza LIKE '%$valor%'";
+    $emple = $where;
+    $this->model->Buscar($emple);
+                 }
+             } 
+    
+             require_once 'view/header.php';
+             require_once 'view/lista/lista2.php';
+        
+    }
+
     public function Guardar(){
         $emple = new Lista();
         

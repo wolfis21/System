@@ -36,6 +36,22 @@ class ProveedorController{
     require_once 'view/proveedor/proveedor2.php';
    } 
 
+   public function Buscar(){
+    $emple = new Proveedor();
+     if(!empty($_POST)) {
+        $valor = $_POST['buscar'];
+        if (!empty($valor)){
+            $where = "WHERE nombre_empre LIKE '%$valor%'";
+$emple = $where;
+$this->model->Buscar($emple);
+             }
+         } 
+
+         require_once 'view/header.php';
+         require_once 'view/proveedor/proveedor2.php';
+    
+}
+
     public function Guardar(){
         $emple = new Proveedor();
         

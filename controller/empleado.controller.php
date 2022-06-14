@@ -33,6 +33,22 @@ class EmpleadoController{
     require_once 'view/empleado/empleado2.php';
    } 
 
+   public function Buscar(){
+    $emple = new Empleado();
+     if(!empty($_POST)) {
+        $valor = $_POST['buscar'];
+        if (!empty($valor)){
+            $where = "WHERE Nombre LIKE '%$valor%'";
+$emple = $where;
+$this->model->Buscar($emple);
+             }
+         } 
+
+     require_once 'view/header.php';
+     require_once 'view/empleado/empleado2.php';
+    
+}
+
     public function Guardar(){
         $emple = new Empleado();
         

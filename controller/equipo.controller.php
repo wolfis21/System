@@ -67,6 +67,22 @@ class EquipoController{
        
     }
 
+    public function Buscar(){
+        $emple = new Rev();
+         if(!empty($_POST)) {
+            $valor = $_POST['buscar'];
+            if (!empty($valor)){
+                $where = "WHERE nombre_e LIKE '%$valor%'";
+    $emple = $where;
+    $this->model2->Buscar($emple);
+                 }
+             } 
+    
+             require_once 'view/header.php';
+             require_once 'view/equipo_v/revision/revision-vista.php';
+        
+    }
+
     public function Guardar(){
         $equi = new Equipo();
         
