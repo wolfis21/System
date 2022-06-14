@@ -10,7 +10,7 @@ require_once 'view/header.php';
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=Empleado&a=Mostrar">Ver Empleados</a>
     <a class="btn btn-primary" href="?c=Cliente&a=Mostrar">Ver Clientes</a>
-
+    <a class="btn btn-primary" href="?c=Equipo&a=MostrarRev">Ver Revisiones</a>
     <!-- carta de entregta gestion -->
 </div>
 

@@ -56,6 +56,16 @@ class EquipoController{
         require_once 'view/header.php';
         require_once 'view/equipo_v/revision/revision-vista.php';
     } 
+    public function Solicitar(){
+        $rev = new Rev();
+        
+        if(isset($_REQUEST['idRev_equipo'])){
+            $rev = $this->model2->Obtener($_REQUEST['idRev_equipo']);
+         }
+         require_once 'view/header.php';
+         require_once 'view/carta/carta.php';
+       
+    }
 
     public function Guardar(){
         $equi = new Equipo();

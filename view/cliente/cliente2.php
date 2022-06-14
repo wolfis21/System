@@ -1,3 +1,4 @@
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
 <h1 class="page-header">Clientes</h1>
 
 <div class="well well-sm text-right">

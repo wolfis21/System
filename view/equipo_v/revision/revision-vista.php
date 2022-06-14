@@ -25,7 +25,7 @@
             <td><?php echo $r->descrip_reemp; ?></td>
             <td><?php echo $r->presupuesto; ?></td>
             <td>
-                    <a onclick="javascript:return confirm('¿Seguro de procesar carta de entrega?');" href=" =<?php echo $r->idRev_equipo; ?>">Solicitar</a>
+                    <a onclick="javascript:return confirm('¿Seguro de procesar carta de entrega?');" href="?c=Equipo&a=Solicitar&idRev_equipo=<?php echo $r->idRev_equipo; ?>">Solicitar</a>
             </td>
         </tr>
     <?php endforeach; ?>
