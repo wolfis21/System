@@ -26,12 +26,12 @@ $where = "";
         </tr>
     </thead>
     <tbody>
-    <?php foreach($this->model2->Buscar($where) as $r): ?>
+    <?php foreach($this->model2->Listar() as $r): ?>
         <tr>
             <td><?php echo $r->nombre_e; ?></td>
-            <td><?php echo $r->fecha_ingre;?></td>
-            <td><?php echo $r->descripcion; ?></td>
-            <td><?php echo $r->prev_diag; ?></td>
+            <td><?php echo $r->fecha_rev;?></td>
+            <td><?php echo $r->descrip_rev; ?></td>
+            <td><?php echo $r->descrip_reemp; ?></td>
             <td><?php echo $r->presupuesto; ?></td>
             <td>
                     <a onclick="javascript:return confirm('¿Seguro de procesar carta de entrega?');" href="?c=Equipo&a=Solicitar&idRev_equipo=<?php echo $r->idRev_equipo; ?>">Solicitar</a>

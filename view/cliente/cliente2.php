@@ -39,7 +39,7 @@ $where = "";
     <tbody>
     <?php 
 
-foreach($this->model->Buscar($where) as $r): 
+foreach($this->model->Listar() as $r): 
     //while($r = $resultado->fetch(PDO::FETCH_OBJ)){ 
       
     ?>
@@ -51,7 +51,7 @@ foreach($this->model->Buscar($where) as $r):
             <td><?php echo $r->Direccion; ?></td>
             <td><?php echo $r->Telefono; ?></td>
             <td><?php echo $r->Correo; ?></td>
-            <td><?php echo $r->Empleado_idEmpleado; ?></td>
+            <td><?php echo $r->pNombre." ".$r->pApellido; ?></td>
          
             <!-- <td>
                 <a href="?c=Empleado&a=Crud&id=<?php echo $r->idcliente; ?>">Editar</a>

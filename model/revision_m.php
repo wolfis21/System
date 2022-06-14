@@ -8,7 +8,7 @@ class Rev{
     public $fecha_rev;
     public $descrip_rev;
     public $descrip_reemp;
-    public $prepuesto;
+    public $presupuesto;
     public $Equipo_idEquipo;
     
     public function __CONSTRUCT()
@@ -60,7 +60,7 @@ class Rev{
 					$where = "WHERE nombre_e LIKE '%$valor%'";
 					 }
 				 }
-				 $consulta = "SELECT * FROM equipo $where";
+				 $consulta = "SELECT * FROM rev_equipo, equipo $where";
 				 $resultado = $this->pdo->query($consulta);
 
 				 return $resultado->fetchAll(PDO::FETCH_OBJ);
