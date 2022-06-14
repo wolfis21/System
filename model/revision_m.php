@@ -68,7 +68,7 @@ class Rev{
 		{
 			$result = array();
 			$consulta = $this->pdo->prepare("SELECT e.Cedula,e.pNombre,e.pApellido,c.idCedula,c.Nombre,c.Apellido,c.Direccion, c.Telefono, 
-													c.Correo, eq.idCodigo,eq.nombre_e,eq.fecha_ingre,rev.descrip_rev,
+													c.Correo, eq.idCodigo,eq.nombre_e,eq.fecha_ingre,rev.fecha_rev,rev.descrip_rev,
 													rev.descrip_reemp,rev.presupuesto 
 													FROM empleado e,cliente c,equipo eq,rev_equipo rev
 													 WHERE e.idEmpleado = c.Empleado_idEmpleado AND c.idCliente = eq.Cliente_idCliente AND

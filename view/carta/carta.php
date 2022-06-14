@@ -65,41 +65,54 @@ SELECT e.Cedula,e.pNombre,e.pApellido,c.idCliente,c.Nombre,c.Apellido,c.Direccio
          </div>
          
          <div class="form-group"> 
-            <label> Direccion</label>
+            <label> Direccion: </label>
             <td><?php echo $r->Direccion; ?></td>
          </div>
          
          <div class="form-group"> 
-             <label>Telefono</label>
+             <label>Telefono: </label>
              <td><?php echo $r->Telefono; ?></td>
          </div>
          
          <div class="form-group"> 
-            <label></label>
+            <label>Correo: </label>
+            <td><?php echo $r->Correo; ?></td>
+         </div>
+         <h3 class="page-header" align="center">Equipo</h3>
+         <div class="form-group"> 
+            <label>Codigo de Equipo: </label>
+            <td><?php echo $r->idCodigo; ?></td>
+         </div>
+         
+         <div class="form-group"> 
+            <label>Nombre del equipo: </label>
+            <td><?php echo $r->nombre_e; ?></td>
+         </div>
+         
+         <div class="form-group"> 
+            <label>Fecha de ingreso: </label>
+            <td><?php echo $r->fecha_ingre; ?></td>
+         </div>
+           
+         <div class="form-group"> 
+            <label>Fecha de revision: </label>
+            <td><?php echo $r->fecha_rev; ?></td>
          </div>
 
          <div class="form-group"> 
-            <label></label>
+            <label>Descripcion de Revision: </label>
+            <td><?php echo $r->descrip_rev; ?></td>
          </div>
          
          <div class="form-group"> 
-            <label></label>
+            <label>Descripcion de Reemplazo: </label>
+            <td><?php echo $r->descrip_reemp; ?></td>
          </div>
          
          <div class="form-group"> 
-            <label></label>
+             <label>Monto: </label>
+             <td><?php echo $r->presupuesto; ?></td>
          </div>
-         
-         <div class="form-group"> 
-            <label></label>
-         </div>
-         <td><?php echo $r->Correo; ?></td>
-         <td><?php echo $r->idCodigo; ?></td>
-         <td><?php echo $r->nombre_e; ?></td>
-         <td><?php echo $r->fecha_ingre; ?></td>
-         <td><?php echo $r->descrip_rev; ?></td>
-         <td><?php echo $r->descrip_reemp; ?></td>
-         <td><?php echo $r->presupuesto; ?></td>
 
      </tr>
  <?php endforeach; ?>
