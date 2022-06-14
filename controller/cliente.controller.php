@@ -38,7 +38,6 @@ require_once 'view/cliente/header.php';
 require_once 'view/cliente/cliente2.php';
 
 } 
-//falta implementar
 public function Buscar(){
     $emple = new Cliente();
      if(!empty($_POST)) {

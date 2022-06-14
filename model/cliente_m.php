@@ -81,8 +81,7 @@ class Cliente
 				 $resultado = $this->pdo->query($consulta);
 
 				 return $resultado->fetchAll(PDO::FETCH_OBJ);
-				 
-				 
+				 				 
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());

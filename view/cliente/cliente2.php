@@ -1,7 +1,5 @@
 <?php 
-
 $where = "";
-
 ?>
 
 <h1 class="page-header">Clientes</h1>
