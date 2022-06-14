@@ -1,14 +1,10 @@
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
 <h1 class="page-header">
-    
     <div class="well well-sm text-right">
-    Lista Repuestos
-    <a class="btn btn-primary" href="?c=Cliente&a=Index">Seccion Clientes</a>
-    <a class="btn btn-primary" href="?c=Equipo&a=Index">Seccion Equipos</a>
-    <!-- el agregar equipos viene despues de la seccion equipos -->
-    <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver Proveedores</a>
-    <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver Lista</a>
-    <!-- carta de entrega por implementar -->
-    </div>
+     <a class="btn btn-primary" href="javascript: history.go(-1)">Volver atrás</a> 
+     <p align="left">lista de Repuestos</p>
+</div>
 </h1>
 
 <table class="table table-striped">

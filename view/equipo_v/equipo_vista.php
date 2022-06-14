@@ -1,12 +1,13 @@
+
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
+
 <h1 class="page-header">
 <div class="well well-sm text-right">
-    Registro de Equipos
     <a class="btn btn-primary" href="?c=Cliente&a=Index">Seccion Clientes</a>
-    <a class="btn btn-primary" href="?c=Equipo&a=Index">Seccion Equipos</a>
-    <!-- el agregar equipos viene despues de la seccion equipos -->
     <a class="btn btn-primary" href="?c=Proveedor&a=Mostrar">Ver Proveedores</a>
     <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver Lista</a>
     <!-- carta de entrega por implementar -->
+    <p align="left"> Registro de Equipos </p>
     </div>
 </h1>
 

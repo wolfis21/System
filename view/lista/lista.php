@@ -1,5 +1,12 @@
-<h1 class="page-header">Registro de Lista Repuestos</h1>
+<h4 align="right"><a href="?c=Usuario&a=Index">Cerrar Sesion</a></h4>
 
+<h1 class="page-header">
+    <div class="well well-sm text-right">
+    <a class="btn btn-primary" href="?c=Empleado&a=Index">Seccion Empleados</a>
+    <a class="btn btn-primary" href="?c=Proveedor&a=Index">Seccion Proveedor</a>
+    <p align="left"> Registro de lista de Repuestos </p>    
+</div>
+</h1>
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=Lista&a=Mostrar">Ver mas detalles</a>
     <a class="btn btn-primary" href="?c=Lista&a=Crud">Nuevo Repuesto</a>
@@ -33,6 +40,3 @@
         </tbody>
     </table> 
     <br>
-<div align="center">
- <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a> 
-</div>

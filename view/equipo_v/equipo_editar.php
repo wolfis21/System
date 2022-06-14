@@ -50,7 +50,7 @@
 </form>
 
 <div align="center">
-    <a href="javascript: history.go(-1)" class="btn btn-primary">Volver atrás</a>
+    <a href="?c=Equipo&a=Index" class="btn btn-primary">Volver atrás</a>
     </div>
 
 <script>

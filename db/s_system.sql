@@ -23,6 +23,8 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 -- Estructura de tabla para la tabla `cliente`
 --
+CREATE DATABASE s_system;
+USE s_system;
 
 CREATE TABLE `cliente` (
   `idCliente` int(11) NOT NULL,
