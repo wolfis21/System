@@ -89,24 +89,7 @@ class Lista{
 	}
     
     public function Actualizar($data){
-		$ver1 = "SELECT * FROM lista WHERE idProducto = $data->idProducto";
-		
-		$query = $this->pdo->query($ver1);
-		
-			if($query->fetchAll(PDO::FETCH_ASSOC) == true){
-				?>    
-				<div>
-				<br>
-				<center><h1> ERROR!!</h1> </center>
-				</div>
-				<center>
-				<h1>DATOS YA EXISTENTES</h1>
-			   <br>
-			   <h2>Vuelva a verificar el ID</h2>
-				<br>
-				</center>
-			<?php
-			} else{
+
 		try{
             $sql = "UPDATE lista SET 
                     nombre_pieza        =?,
@@ -127,7 +110,6 @@ class Lista{
 		{
 			die($e->getMessage());
 		}
-	}
     }
 
     public function Registrar(Lista $data)
