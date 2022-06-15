@@ -62,7 +62,6 @@ class EquipoController{
         if(isset($_REQUEST['idRev_equipo'])){
             $rev = $this->model2->Obtener($_REQUEST['idRev_equipo']);
          }
-         require_once 'view/header.php';
          require_once 'view/carta/carta.php';
        
     }
