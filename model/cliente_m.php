@@ -29,7 +29,8 @@ class Cliente
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM cliente, empleado WHERE idEmpleado = Empleado_idEmpleado");
+			$stm = $this->pdo->prepare("SELECT * FROM cliente, empleado 
+										WHERE idEmpleado = Empleado_idEmpleado");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -78,7 +79,8 @@ class Cliente
 					 }
 					 
 				 }
-				 $consulta = "SELECT * FROM cliente INNER JOIN empleado ON idEmpleado = Empleado_idEmpleado $where";
+				 $consulta = "SELECT * FROM cliente INNER JOIN empleado
+				 				 ON idEmpleado = Empleado_idEmpleado $where";
 				 $resultado = $this->pdo->query($consulta);
 
 				 return $resultado->fetchAll(PDO::FETCH_OBJ);
@@ -143,7 +145,9 @@ class Cliente
 	{
 		try 
 		{
-		$sql = "INSERT INTO cliente (idCedula,Nombre, Apellido, Direccion, Telefono, Correo, Empleado_idEmpleado) 
+		$sql = "INSERT INTO cliente (idCedula,Nombre, Apellido, 
+			Direccion, Telefono, Correo, 
+			Empleado_idEmpleado) 
 		        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 

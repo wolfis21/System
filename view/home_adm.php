@@ -1,6 +1,3 @@
-<!-- implementar divisiones de roles -->
-
-<!-- nota: read clientes, read empleado, seccion de carta de entrega  -- -->
 
 <?php
 require_once 'model/database.php';
@@ -11,7 +8,6 @@ require_once 'view/header.php';
     <a class="btn btn-primary" href="?c=Empleado&a=Mostrar">Ver Empleados</a>
     <a class="btn btn-primary" href="?c=Cliente&a=Mostrar">Ver Clientes</a>
     <a class="btn btn-primary" href="?c=Equipo&a=MostrarRev">Ver Revisiones</a>
-    <!-- carta de entregta gestion -->
 </div>
 
 <h1 class="page-header"> ADMINISTRADOR </h1>

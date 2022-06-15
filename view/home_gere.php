@@ -6,13 +6,8 @@ require_once 'view/header.php';
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=Empleado&a=Index">Seccion Empleados</a>
     <a class="btn btn-primary" href="?c=Proveedor&a=Index">Seccion Proveedor</a>
-    <a class="btn btn-primary" href="?c=Lista&a=Index">Seccion Lista</a>
-    
+    <a class="btn btn-primary" href="?c=Lista&a=Index">Seccion Lista</a>  
 </div>
-<!-- nota: puede hacer la seccion de empleado (crud), seccion proveedores (crud)
-operar la seccion entera de listas y gestiona usuarios por empleados -->
-
-
 <h1 class="page-header"> GERENTE </h1>
 <?php
 
@@ -58,7 +53,4 @@ if (isset($_REQUEST['c']) == 'Empleado') {
 
 ?>
 
-<!-- <div class="well well-sm text-center">
-    <img src="https://us.123rf.com/450wm/pixelalex/pixelalex1602/pixelalex160200046/52881293-icono-servicio-de-inform%C3%A1tica-soporte-t%C3%A9cnico-servicio-de-reparaci%C3%B3n-de-equipo.jpg"/>
-    </div> -->
 <?php require_once 'view/footer.php'; ?>

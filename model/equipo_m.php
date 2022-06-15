@@ -27,7 +27,8 @@ class Equipo{
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM equipo, cliente WHERE idCliente = Cliente_idCliente");
+			$stm = $this->pdo->prepare("SELECT * FROM equipo, cliente 
+										WHERE idCliente = Cliente_idCliente");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -112,7 +113,8 @@ class Equipo{
 	{
 		try 
 		{
-		$sql = "INSERT INTO equipo (idCodigo,nombre_e, descripcion, prev_diag, fecha_ingre, Cliente_idCliente) 
+		$sql = "INSERT INTO equipo (idCodigo,nombre_e, descripcion, 
+				prev_diag, fecha_ingre, Cliente_idCliente) 
 		        VALUES (?, ?, ?, ?, ?, ?)";
 
 

@@ -47,7 +47,8 @@ class Empleado
 	{
 		try
 		{
-			$this->consulta = $this->pdo->prepare("SELECT * FROM empleado WHERE Cargo = 'Gerente'");
+			$this->consulta = $this->pdo->prepare("SELECT * FROM empleado 
+													WHERE Cargo = 'Gerente'");
             $this->consulta->execute();
             return $this->consulta;
 		}
@@ -60,7 +61,8 @@ class Empleado
 	{
 		try
 		{
-			$this->consulta = $this->pdo->prepare("SELECT * FROM empleado WHERE Cargo = 'Tecnico'");
+			$this->consulta = $this->pdo->prepare("SELECT * FROM empleado 
+													WHERE Cargo = 'Tecnico'");
             $this->consulta->execute();
             return $this->consulta;
 		}
@@ -174,7 +176,8 @@ class Empleado
 	{
 		try 
 		{
-		$sql = "INSERT INTO empleado (Cedula, pNombre, sNombre, pApellido, sApellido, Fecha_nacimiento, Direccion, Genero, telefono, Cargo) 
+		$sql = "INSERT INTO empleado (Cedula, pNombre, sNombre, 
+				pApellido, sApellido, Fecha_nacimiento, Direccion, Genero, telefono, Cargo) 
 		        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		$sql2 = "INSERT INTO usuario (nombre, contraseña, Empleado_idEmpleado) 

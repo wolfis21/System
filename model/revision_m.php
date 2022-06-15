@@ -26,7 +26,8 @@ class Rev{
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM rev_equipo, equipo WHERE idEquipo = Equipo_idEquipo");
+			$stm = $this->pdo->prepare("SELECT * FROM rev_equipo, equipo 
+										WHERE idEquipo = Equipo_idEquipo");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -62,7 +63,8 @@ class Rev{
 				 }
 
 
-				 $consulta = "SELECT * FROM rev_equipo INNER JOIN equipo ON idEquipo = Equipo_idEquipo $where";
+				 $consulta = "SELECT * FROM rev_equipo 
+				 				INNER JOIN equipo ON idEquipo = Equipo_idEquipo $where";
 				 $resultado = $this->pdo->query($consulta);
 
 				 return $resultado->fetchAll(PDO::FETCH_OBJ);
@@ -138,7 +140,8 @@ class Rev{
 	{
 		try 
 		{
-		$sql = "INSERT INTO rev_equipo (fecha_rev,descrip_rev,descrip_reemp, presupuesto, Equipo_idEquipo) 
+		$sql = "INSERT INTO rev_equipo (fecha_rev,descrip_rev,
+				descrip_reemp, presupuesto, Equipo_idEquipo) 
 		        VALUES (?, ?, ?, ?, ?)";
 
 

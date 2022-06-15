@@ -49,12 +49,6 @@ $where = "";
             <td><?php echo $r->telefono; ?></td>
             <td><?php echo $r->Cargo; ?></td>
          
-            <!-- <td>
-                <a href="?c=Empleado&a=Crud&id=<?php echo $r->idEmpleado; ?>">Editar</a>
-            </td>
-            <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Empleado&a=Eliminar&id=<?php echo $r->idEmpleado; ?>">Eliminar</a>
-            </td> -->
         </tr> 
     <?php endforeach; ?>
     </tbody>

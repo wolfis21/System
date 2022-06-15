@@ -137,7 +137,8 @@ class Proveedor{
 	{
 		try 
 		{
-		$sql = "INSERT INTO proveedores (nombre_empre, categoria, direccion, telefono,Empleado_idEmpleado) 
+		$sql = "INSERT INTO proveedores (nombre_empre, categoria,
+				 direccion, telefono,Empleado_idEmpleado) 
 		        VALUES (?, ?, ?, ?, ?)";
 
 
