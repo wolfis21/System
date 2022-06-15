@@ -111,6 +111,8 @@ class Equipo{
 
     public function Registrar(Equipo $data)
 	{
+		// la validacion por uidCodigo esta en decision, falta prueban para ver si
+		// es necesariio
 		try 
 		{
 		$sql = "INSERT INTO equipo (idCodigo,nombre_e, descripcion, 

@@ -135,6 +135,24 @@ class Proveedor{
 
     public function Registrar(Proveedor $data)
 	{
+		$ver1 = "SELECT * FROM proveedores WHERE nombre_empre = $data->nombre_empre";
+		
+		$query = $this->pdo->query($ver1);
+		
+			if($query->fetchAll(PDO::FETCH_ASSOC) == true){
+				?>    
+				<div>
+				<br>
+				<center><h1> ERROR!!</h1> </center>
+				</div>
+				<center>
+				<h1>DATOS YA EXISTENTES</h1>
+			   <br>
+			   <h2>Vuelva a registrar</h2>
+				<br>
+				</center>
+			<?php
+			} else{
 		try 
 		{
 		$sql = "INSERT INTO proveedores (nombre_empre, categoria,
@@ -157,5 +175,6 @@ class Proveedor{
 		{
 			die($e->getMessage());
 		}
+	}
 	}
 }
