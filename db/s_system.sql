@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2022 a las 02:24:56
+-- Tiempo de generación: 16-06-2022 a las 01:36:01
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -20,11 +20,12 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `s_system`
 --
+
 -- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `cliente`
 --
-CREATE DATABASE s_system;
-USE s_system;
 
 CREATE TABLE `cliente` (
   `idCliente` int(11) NOT NULL,
@@ -42,7 +43,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idCliente`, `idCedula`, `Nombre`, `Apellido`, `Direccion`, `Telefono`, `Correo`, `Empleado_idEmpleado`) VALUES
-(3, '277651', 'prueba', 'sifue', 'curagua', '12123', 'isaa@hot.com', 1);
+(10, '1234', 'rafael', 'bustamante', 'los olivos', '0988', 'rafaelbb@gmail.com', 6),
+(11, '0987', 'esteban', 'salamanca', 'curagua', '34535', 'isaac@ggg.com', 7);
 
 -- --------------------------------------------------------
 
@@ -69,7 +71,12 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`idEmpleado`, `Cedula`, `pNombre`, `sNombre`, `pApellido`, `sApellido`, `Fecha_nacimiento`, `Direccion`, `Genero`, `telefono`, `Cargo`) VALUES
-(1, '27765209', 'isaac', 'Alejandr0', 'saado', 'mathison', '2000-08-04', 'curagua', '1', '04249662043', 'Gerente');
+(5, '27765209', 'Isaac ', 'Alejandro', 'Saado', 'Mathison', '2000-08-04', 'curagua', '1', '04249662043', 'Gerente'),
+(6, '000', 'alejandro', 'alias', 'guitierrez', 'rojas', '1984-02-03', 'San felix', '1', '099887', 'Gerente'),
+(7, '0989787', 'mathias', 'alejandro', 'gonzales', 'guzman', '1996-08-02', 'los olivos', '1', '868887', 'Tecnico'),
+(9, '28765', 'Mariam', 'Alejandra', 'Bislick', 'Arevalo', '2002-05-28', 'castilito', '2', '049482', 'Administrador'),
+(14, '1234', 'admin', 'sss', 'sss', 'sss', '2000-03-02', 'unare', '2', '34344', 'Gerente'),
+(15, '98765', 'karilis', 'alejo', 'ramos', 'sasa', '2000-08-04', 'los olivos', '2', '0975', 'Tecnico');
 
 -- --------------------------------------------------------
 
@@ -87,6 +94,13 @@ CREATE TABLE `equipo` (
   `Cliente_idCliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `equipo`
+--
+
+INSERT INTO `equipo` (`idEquipo`, `idCodigo`, `nombre_e`, `descripcion`, `prev_diag`, `fecha_ingre`, `Cliente_idCliente`) VALUES
+(4, 'm2401', 'laptop Vit', 'Se cuelga en el logo de inicio', 'posibles fallas de disco duro  ', '2022-06-15', 10);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +112,14 @@ CREATE TABLE `lista` (
   `nombre_pieza` varchar(45) NOT NULL,
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `lista`
+--
+
+INSERT INTO `lista` (`idProducto`, `nombre_pieza`, `precio`) VALUES
+(664, 'pantalla s3', 20),
+(63456, 'bateria alcatel', 12);
 
 -- --------------------------------------------------------
 
@@ -119,9 +141,7 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`idProveedores`, `nombre_empre`, `categoria`, `direccion`, `telefono`, `Empleado_idEmpleado`) VALUES
-(1, 'ferrominera', 'torwerefsfef', 'castilito', '213123', 1),
-(2, 'ferreotal', 'cavillasd', 'castilito', '213123', 1),
-(4, 'aaaaa', 'sssss', 'fggggg', '2222333', 1);
+(5, 'touch celular', 'pantallas, baterias, cargadores', 'altavista 1', '2342355', 5);
 
 -- --------------------------------------------------------
 
@@ -149,6 +169,13 @@ CREATE TABLE `rev_equipo` (
   `Equipo_idEquipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `rev_equipo`
+--
+
+INSERT INTO `rev_equipo` (`idRev_equipo`, `fecha_rev`, `descrip_rev`, `descrip_reemp`, `presupuesto`, `Equipo_idEquipo`) VALUES
+(5, '2022-06-15', 'teclado malo por el conector, ocasiona retraso en inicio y sistema operativo mal', 'Limpieza general, remplazo de componente, montar S.O, respaldo de informacion', 40, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -167,7 +194,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `contraseña`, `Empleado_idEmpleado`) VALUES
-(1, 'isaac', '27765209', 1);
+(5, 'Isaac ', '27765209', 5),
+(6, 'alejandro', '000', 6),
+(7, 'mathias', '0989787', 7),
+(9, 'Mariam', '28765', 9),
+(14, 'admin', '1234', 14),
+(15, 'karilis', '98765', 15);
 
 --
 -- Índices para tablas volcadas
@@ -231,40 +263,41 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
+--
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `idEmpleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idEmpleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `idProveedores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idProveedores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `rev_equipo`
 --
 ALTER TABLE `rev_equipo`
-  MODIFY `idRev_equipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRev_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas
