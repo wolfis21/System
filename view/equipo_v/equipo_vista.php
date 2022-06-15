@@ -26,7 +26,6 @@
             <th style="width:120px;">Fecha de ingreso</th>
             <th style="width:60px;">ID Cliente</th>
             <th style="width:60px;">Cliente</th>
-            <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>
@@ -38,16 +37,16 @@
             <td><?php echo $r->prev_diag; ?></td>
             <td><?php echo $r->fecha_ingre; ?></td>
             <td><?php echo $r->idCedula; ?></td>
-            <td><?php echo $r->Nombre; ?></td>
-            <td><?php echo $r->Apellido; ?></td>
+            <td><?php echo $r->Nombre." ".$r->Apellido; ?></td>
             <td>
                 <a href="?c=Equipo&a=Crud&idEquipo=<?php echo $r->idEquipo; ?>">Editar</a>
             </td>
-            <td>
+            <!-- considerar si se pondria eliminar -->
+            <!-- <td>
                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Equipo&a=Eliminar&idEquipo=<?php echo $r->idEquipo; ?>">Eliminar</a>
-            </td>
+            </td> -->
             <td>
-            <a href="?c=Equipo&a=Crud2&idEquipo=<?php echo $r->idEquipo; ?>">Ag. Revision</a>
+            <a href="?c=Equipo&a=Crud2&idEquipo=<?php echo $r->idEquipo; ?>">Agregar Revision</a>
             </td>
         </tr>
     <?php endforeach; ?>
