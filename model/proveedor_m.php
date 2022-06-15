@@ -105,7 +105,25 @@ class Proveedor{
 	}
      
     public function Actualizar($data){
-        try{
+		$ver1 = "SELECT * FROM proveedores WHERE nombre_empre = $data->nombre_empre";
+		
+		$query = $this->pdo->query($ver1);
+		
+			if($query->fetchAll(PDO::FETCH_ASSOC) == true){
+				?>    
+				<div>
+				<br>
+				<center><h1> ERROR!!</h1> </center>
+				</div>
+				<center>
+				<h1>DATOS YA EXISTENTES</h1>
+			   <br>
+			   <h2>Vuelva a verficar el nombre de la empresa</h2>
+				<br>
+				</center>
+			<?php
+			} else{
+		try{
             $sql = "UPDATE proveedores SET 
                     nombre_empre        =?,
                     categoria           =?,
@@ -131,6 +149,7 @@ class Proveedor{
 		{
 			die($e->getMessage());
 		}
+	}
     }
 
     public function Registrar(Proveedor $data)
