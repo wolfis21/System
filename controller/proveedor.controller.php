@@ -46,10 +46,8 @@ $emple = $where;
 $this->model->Buscar($emple);
              }
          } 
-
          require_once 'view/header.php';
          require_once 'view/proveedor/proveedor2.php';
-    
 }
 
     public function Guardar(){

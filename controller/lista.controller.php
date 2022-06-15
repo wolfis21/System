@@ -42,10 +42,8 @@ class ListaController{
     $this->model->Buscar($emple);
                  }
              } 
-    
              require_once 'view/header.php';
              require_once 'view/lista/lista2.php';
-        
     }
 
     public function Guardar(){

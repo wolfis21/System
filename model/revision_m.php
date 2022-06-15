@@ -141,7 +141,6 @@ class Rev{
 		$sql = "INSERT INTO rev_equipo (fecha_rev,descrip_rev,descrip_reemp, presupuesto, Equipo_idEquipo) 
 		        VALUES (?, ?, ?, ?, ?)";
 
-// $id_equi = $this->pdo->lastInsertId();
 
 		$this->pdo->prepare($sql)
 		     ->execute(

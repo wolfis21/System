@@ -40,8 +40,6 @@ class EquipoController{
 
         if(isset($_REQUEST['idEquipo'])){
             $equi = $this->model->Obtener($_REQUEST['idEquipo']);
-            // $rev->Equipo_idEquipo = $_REQUEST['idEquipo'];
-
         }
 
         require_once 'view/header.php';
@@ -123,7 +121,6 @@ class EquipoController{
     require_once 'view/equipo_v/footer.php';
     }
     
-    //verificar el eliminar en cascada
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['idEquipo']);
         

@@ -14,7 +14,6 @@ class UsuarioController{
     public function Guardar(){
         $user = new Usuario();
         
-        // $user->id_usuario = $_REQUEST['id'];
         $user->nombre = $_REQUEST['pNombre'];
         $user->contrasena = $_REQUEST['Cedula'];
         $user->Empleado_idEmpleado = $_REQUEST['id'];
@@ -28,11 +27,9 @@ class UsuarioController{
     public function Entrar(){
         $user = new Usuario();
         
-        // $user->id_usuario = $_REQUEST['id'];
         $user->nombre = $_REQUEST['nombre'];
         $user->contrasena = $_REQUEST['contraseña'];
-       // $user->Empleado_idEmpleado = $_REQUEST['id'];
-        
+      
         $resp = $user->verificar($user->nombre, $user->contrasena);
         $gere = $user->definirGere($user->nombre);
         $tec =  $user->definirTec($user->nombre);
