@@ -50,7 +50,7 @@ class Rev{
 			die($e->getMessage());
 		}
 	}
-	
+	 
 	public function Buscar($where){
 		try 
 		{ 
@@ -60,7 +60,9 @@ class Rev{
 					$where = "WHERE nombre_e LIKE '%$valor%'";
 					 }
 				 }
-				 $consulta = "SELECT * FROM rev_equipo, equipo $where";
+
+
+				 $consulta = "SELECT * FROM rev_equipo INNER JOIN equipo ON idEquipo = Equipo_idEquipo $where";
 				 $resultado = $this->pdo->query($consulta);
 
 				 return $resultado->fetchAll(PDO::FETCH_OBJ);

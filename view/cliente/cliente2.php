@@ -39,7 +39,7 @@ $where = "";
     <tbody>
     <?php 
 
-foreach($this->model->Listar() as $r): 
+foreach($this->model->Buscar($where) as $r): 
     //while($r = $resultado->fetch(PDO::FETCH_OBJ)){ 
       
     ?>

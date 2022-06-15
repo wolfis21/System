@@ -26,7 +26,7 @@ $where = "";
         </tr>
     </thead>
     <tbody>
-    <?php foreach($this->model2->Listar() as $r): ?>
+    <?php foreach($this->model2->Buscar($where) as $r): ?>
         <tr>
             <td><?php echo $r->nombre_e; ?></td>
             <td><?php echo $r->fecha_rev;?></td>

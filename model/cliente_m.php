@@ -76,8 +76,9 @@ class Cliente
 				if (!empty($valor)){
 					$where = "WHERE Nombre LIKE '%$valor%'";
 					 }
+					 
 				 }
-				 $consulta = "SELECT * FROM cliente $where";
+				 $consulta = "SELECT * FROM cliente INNER JOIN empleado ON idEmpleado = Empleado_idEmpleado $where";
 				 $resultado = $this->pdo->query($consulta);
 
 				 return $resultado->fetchAll(PDO::FETCH_OBJ);
