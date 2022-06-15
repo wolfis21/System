@@ -27,7 +27,7 @@
             <th>Telefono</th>
             <th>Correo</th>     
             <th style="width:60px;"></th>
-            <th style="width:60px;"></th>
+
         </tr>
     </thead>
     <tbody>
@@ -47,9 +47,9 @@
                 porque este puede tener mucha libertad en evadir  registros 
                     puede llegar a robar equipos y borra cliente y todo. En un version mas adelante
                 habra un rol mas arriba que habilite este eliminar siendo el Gerente-Tecnico (ref. Papa)-->
-            <td>
+            <!-- <td>
                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Cliente&a=Eliminar&id=<?php echo $r->idCliente; ?>">Eliminar</a>
-            </td>
+            </td> -->
             <!--agregar un btn que te direccione a agregar el equipo de una sola vez (implementar) -->
         </tr>
     <?php endforeach; ?>
