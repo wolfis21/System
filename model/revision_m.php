@@ -62,7 +62,7 @@ class Rev{
 					 }
 				 }
 
-
+				 
 				 $consulta = "SELECT * FROM rev_equipo 
 				 				INNER JOIN equipo ON idEquipo = Equipo_idEquipo $where";
 				 $resultado = $this->pdo->query($consulta);
