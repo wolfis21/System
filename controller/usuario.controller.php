@@ -30,7 +30,7 @@ class UsuarioController{
         $user->nombre = $_REQUEST['nombre'];
         $user->contrasena = $_REQUEST['contraseña'];
       
-        $resp = $user->verificar($user->nombre, $user->contrasena);
+        $resp = $user->verificar($user);
         $gere = $user->definirGere($user->nombre);
         $tec =  $user->definirTec($user->nombre);
         $adm =  $user->definirAdm($user->nombre);

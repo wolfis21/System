@@ -38,15 +38,30 @@ class Usuario{
 			die($e->getMessage());
 		}
 	} 
-	public function verificar($nombre, $contrasena){
+	public function verificar($data){
 			
-		$sql="SELECT * FROM usuario WHERE nombre='$nombre' AND contraseña='$contrasena'";
-		$query = $this->pdo->query($sql);
+		// $sql="SELECT * FROM usuario WHERE nombre='$nombre' AND contraseña='$contrasena'";
+		// $query = $this->pdo->query($sql);
 		
-		if($query){
-			return $query->fetchAll(PDO::FETCH_ASSOC);
-		}else{	
-		 return false;
+		// if($query){
+		// 	return $query->fetchAll(PDO::FETCH_ASSOC);
+		// }else{	
+		//  return false;
+		// }
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * FROM usuario WHERE nombre=? AND contraseña=?");
+			          
+			$stm->execute(array(
+				$data->nombre,
+				$data->contrasena
+							));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			return false;
+			die($e->getMessage());
 		}
 	}
 	public function definirGere($nombre) {
